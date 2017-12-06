@@ -1,0 +1,155 @@
+<template>
+  <div class="fulfilling-bouncing-circle-spinner" :style="spinnerStyle">
+    <div class="circle" :style="circleStyle"></div>
+    <div class="orbit" :style="orbitStyle"></div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'FulfillingBouncingCircleSpinner',
+
+    props: {
+      animationDuration: {
+        type: Number,
+        default: 4000
+      },
+      size: {
+        type: Number,
+        default: 60
+      },
+      color: {
+        type: String,
+        default: '#fff'
+      }
+    },
+
+    computed: {
+      spinnerStyle () {
+        return {
+          height: `${this.size}px`,
+          width: `${this.size}px`,
+          animationDuration: `${this.animationDuration}ms`
+        }
+      },
+
+      orbitStyle () {
+        return {
+          height: `${this.size}px`,
+          width: `${this.size}px`,
+          borderColor: this.color,
+          borderWidth: `${this.size * 0.03}px`,
+          animationDuration: `${this.animationDuration}ms`
+        }
+      },
+
+      circleStyle () {
+        return {
+          height: `${this.size}px`,
+          width: `${this.size}px`,
+          borderColor: this.color,
+          color: this.color,
+          borderWidth: `${this.size * 0.1}px`,
+          animationDuration: `${this.animationDuration}ms`
+        }
+      }
+    }
+  }
+</script>
+
+<style  lang="scss" scoped>
+  .fulfilling-bouncing-circle-spinner {
+    position: relative;
+    animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;
+  }
+
+  .orbit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite 4000ms ease;
+  }
+
+  .circle {
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    border: 6px solid #fff;
+    animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
+    transform: rotate(0deg) scale(1);
+  }
+
+  @keyframes fulfilling-bouncing-circle-spinner-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fulfilling-bouncing-circle-spinner-orbit-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    62.5% {
+      transform: scale(0.8);
+    }
+    75% {
+      transform: scale(1);
+    }
+    87.5% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fulfilling-bouncing-circle-spinner-circle-animation {
+    0% {
+      transform: scale(1);
+      border-color: transparent;
+      border-top-color: inherit;
+    }
+    16.7% {
+      border-color: transparent;
+      border-top-color: initial;
+      border-right-color: initial;
+    }
+    33.4% {
+      border-color: transparent;
+      border-top-color: inherit;
+      border-right-color: inherit;
+      border-bottom-color: inherit;
+    }
+    50% {
+      border-color: inherit;
+      transform: scale(1);
+    }
+    62.5% {
+      border-color: inherit;
+      transform: scale(1.4);
+    }
+    75% {
+      border-color: inherit;
+      transform: scale(1);
+      opacity: 1;
+    }
+    87.5% {
+      border-color: inherit;
+      transform: scale(1.4);
+    }
+    100% {
+      border-color: transparent;
+      border-top-color: inherit;
+      transform: scale(1);
+    }
+  }
+</style>

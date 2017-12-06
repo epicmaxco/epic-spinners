@@ -1,0 +1,112 @@
+<template>
+  <div class="circles-to-rhombuses-spinner">
+    <div class="circle" v-for="(cs, index) in circlesStyles" :style="cs" :key="index"></div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'CirclesToRhombusesSpinner',
+
+    props: {
+      animationDuration: {
+        type: Number,
+        default: 1200
+      },
+      circleSize: {
+        type: Number,
+        default: 15
+      },
+      color: {
+        type: String,
+        default: '#fff'
+      },
+      circlesNum: {
+        type: Number,
+        default: 3
+      }
+    },
+
+    computed: {
+      circleStyle () {
+        return {
+          borderColor: this.color,
+          animationDuration: `${this.animationDuration}ms`,
+          height: `${this.circleSize}px`,
+          width: `${this.circleSize}px`,
+          marginLeft: `${this.circleSize * 1.125}px`
+        }
+      },
+
+      circlesStyles () {
+        const circlesStyles = []
+        const delay = 150
+
+        for (let i = 1; i <= this.circlesNum; i++) {
+          const style = Object.assign({
+            animationDelay: `${i * delay}ms`
+          }, this.circleStyle)
+
+          circlesStyles.push(style)
+        }
+
+        return circlesStyles
+      }
+    }
+  }
+</script>
+
+<style  lang="scss" scoped>
+  .circles-to-rhombuses-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  .circle {
+    transform: rotate(45deg);
+
+    border-radius: 10%;
+    border: 3px solid #fff;
+    overflow: hidden;
+    background: transparent;
+
+
+    animation: circles-to-rhombuses-animation 950ms linear infinite;
+
+    &:first-child {
+      margin-left: 0!important;
+    }
+  }
+
+  @keyframes circles-to-rhombuses-animation {
+    0% {
+      border-radius: 10%;
+    }
+
+    17.5% {
+      border-radius: 10%;
+    }
+
+    50% {
+      border-radius: 100%;
+    }
+
+
+    93.5% {
+      border-radius: 10%;
+    }
+
+    100% {
+      border-radius: 10%;
+    }
+  }
+
+  @keyframes circles-to-rhombuses-background-animation {
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+
+</style>
