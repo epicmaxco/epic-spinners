@@ -1,5 +1,7 @@
 <template>
-  <div class="pixel-spinner" :style="spinnerStyle"></div>
+  <div class="pixel-spinner" :style="spinnerStyle">
+    <div class="pixel-spinner-inner" :style="spinnerInnerStyle"></div>
+  </div>
 </template>
 
 <script>
@@ -13,9 +15,9 @@
         type: Number,
         default: 1500
       },
-      pixelSize: {
+      size: {
         type: Number,
-        default: 10
+        default: 70
       },
       color: {
         type: String,
@@ -31,7 +33,18 @@
     },
 
     computed: {
+      pixelSize () {
+        return this.size / 7
+      },
+
       spinnerStyle () {
+        return {
+          width: `${this.size}px`,
+          height: `${this.size}px`
+        }
+      },
+
+      spinnerInnerStyle () {
         return {
           animationDuration: `${this.animationDuration}ms`,
           animationName: this.currentAnimationName,
@@ -115,6 +128,13 @@
   }
 
   .pixel-spinner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pixel-spinner-inner {
     width: 10px;
     height: 10px;
     box-shadow: 15px 15px  0 0,

@@ -11,7 +11,7 @@
       <li>
         <pixel-spinner
           :animation-duration="2000"
-          :pixel-size="10"
+          :pixel-size="70"
           :color="spinnerColor"
         />
       </li>
