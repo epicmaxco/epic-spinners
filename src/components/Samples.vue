@@ -4,7 +4,7 @@
       <li>
         <flower-spinner
           :animation-duration="2500"
-          :dot-size="10"
+          :size="70"
           :color="spinnerColor"
         />
       </li>

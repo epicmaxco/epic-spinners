@@ -1,7 +1,9 @@
 <template>
   <div class="flower-spinner" :style="spinnerStyle">
-    <div class="bigger-dot" :style="biggerDotStyle">
-      <div class="smaller-dot" :style="smallerDotStyle"></div>
+    <div class="dots-container" :style="dotsContainerStyle">
+      <div class="bigger-dot" :style="biggerDotStyle">
+        <div class="smaller-dot" :style="smallerDotStyle"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -17,9 +19,9 @@
         type: Number,
         default: 25000
       },
-      dotSize: {
+      size: {
         type: Number,
-        default: 10
+        default: 70
       },
       color: {
         type: String,
@@ -37,7 +39,18 @@
     },
 
     computed: {
+      dotSize () {
+        return this.size / 7
+      },
+
       spinnerStyle () {
+        return {
+          width: `${this.size}px`,
+          height: `${this.size}px`
+        }
+      },
+
+      dotsContainerStyle () {
         return {
           width: `${this.dotSize}px`,
           height: `${this.dotSize}px`
@@ -167,7 +180,11 @@
   }
 
   .flower-spinner{
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
     .smaller-dot {
       height: 100%;
       width: 100%;
