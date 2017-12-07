@@ -25,26 +25,34 @@
 
     data () {
       return {
-        ringsNum: 9
+        ringsNum: 9,
+        containerPadding: 2
       }
     },
 
     computed: {
+      outerRingSize () {
+        return this.size - this.containerPadding * 2
+      },
+
       spinnerStyle () {
         return {
           height: `${this.size}px`,
-          width: `${this.size}px`
+          width: `${this.size}px`,
+          padding: `${this.containerPadding}px`
         }
       },
+
       ringStyle () {
         return {
           borderTopColor: this.color,
           animationDuration: `${this.animationDuration}ms`
         }
       },
+
       ringsStyles () {
         const ringsStyles = []
-        const ringBase = this.size / (this.ringsNum)
+        const ringBase = this.outerRingSize / (this.ringsNum)
         const ringInc = ringBase
 
         for (let i = 1; i <= this.ringsNum; i++) {
@@ -66,16 +74,18 @@
   .fingerprint-spinner {
     overflow: hidden;
     position: relative;
+    box-sizing: border-box;
   }
 
   .spinner-ring {
-    animation: polar-spinner-animation 1500ms cubic-bezier(0.680, -0.750, 0.265, 1.750) infinite forwards;
+    position: absolute;
     border-radius: 50%;
     border: 2px solid transparent;
+    animation: polar-spinner-animation 1500ms cubic-bezier(0.680, -0.750, 0.265, 1.750) infinite forwards;
+    box-sizing: border-box;
+    margin: auto;
     bottom: 0;
     left: 0;
-    margin: auto;
-    position: absolute;
     right: 0;
     top: 0;
   }

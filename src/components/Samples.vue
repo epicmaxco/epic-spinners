@@ -112,7 +112,7 @@
       <li>
         <fingerprint-spinner
           :animation-duration="1500"
-          :size="60"
+          :size="64"
           :color="spinnerColor"
         />
       </li>
