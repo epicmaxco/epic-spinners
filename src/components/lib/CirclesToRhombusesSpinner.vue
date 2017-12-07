@@ -1,5 +1,5 @@
 <template>
-  <div class="circles-to-rhombuses-spinner">
+  <div class="circles-to-rhombuses-spinner" :style="spinnertStyle">
     <div class="circle" v-for="(cs, index) in circlesStyles" :style="cs" :key="index"></div>
   </div>
 </template>
@@ -28,13 +28,24 @@
     },
 
     computed: {
+      circleMarginLeft () {
+        return this.circleSize * 1.125
+      },
+
+      spinnertStyle () {
+        return {
+          height: `${this.circleSize}px`,
+          width: `${(this.circleSize + this.circleMarginLeft) * this.circlesNum}px`
+        }
+      },
+
       circleStyle () {
         return {
           borderColor: this.color,
           animationDuration: `${this.animationDuration}ms`,
           height: `${this.circleSize}px`,
           width: `${this.circleSize}px`,
-          marginLeft: `${this.circleSize * 1.125}px`
+          marginLeft: `${this.circleMarginLeft}px`
         }
       },
 
@@ -65,7 +76,7 @@
 
   .circle {
     transform: rotate(45deg);
-
+    box-sizing: border-box;
     border-radius: 10%;
     border: 3px solid #fff;
     overflow: hidden;
