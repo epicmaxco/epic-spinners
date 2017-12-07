@@ -1,5 +1,5 @@
 <template>
-  <div class="hollow-dots-spinner">
+  <div class="hollow-dots-spinner" :style="spinnerStyle">
     <div class="dot" v-for="(ds, index) in dotsStyles" :style="ds" :key="index"></div>
   </div>
 </template>
@@ -28,12 +28,24 @@
     },
 
     computed: {
+      horizontalMargin () {
+        return this.dotSize / 2
+      },
+
+      spinnerStyle () {
+        return {
+          height: `${this.dotSize}px`,
+          width: `${(this.dotSize + this.horizontalMargin * 2) * this.dotsNum}px`
+        }
+      },
+
       dotStyle () {
         return {
           animationDuration: `${this.animationDuration}ms`,
           width: `${this.dotSize}px`,
           height: `${this.dotSize}px`,
-          borderSize: `${this.dotSize / 5}px`,
+          margin: `0 ${this.horizontalMargin}px`,
+          borderWidth: `${this.dotSize / 5}px`,
           borderColor: this.color
         }
       },
@@ -62,12 +74,10 @@
   $animation-duration: 1000ms;
 
   .dot {
-    width: $dot-size;
-    height: $dot-size;
     border: ($dot-size / 5) solid #fff;
+    box-sizing: border-box;
     border-radius: 50%;
     float: left;
-    margin: 0 ($dot-size / 2);
     transform: scale(0);
     animation: hollow-dots-spinner-animation $animation-duration ease infinite 0ms;
   }
