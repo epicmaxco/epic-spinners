@@ -90,7 +90,7 @@
       <li>
         <self-building-square-spinner
           :animation-duration="6000"
-          :square-size="10"
+          :size="40"
           :color="spinnerColor"
         />
       </li>
