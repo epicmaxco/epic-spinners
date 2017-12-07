@@ -47,7 +47,6 @@
   }
 
   .fulfilling-square-spinner {
-    display: inline-block;
     position: relative;
     border: 4px solid #fff;
     animation: fulfilling-square-spinner-animation 4s infinite ease;
