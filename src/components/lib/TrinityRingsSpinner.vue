@@ -25,18 +25,29 @@
       }
     },
 
+    data () {
+      return {
+        containerPadding: 3
+      }
+    },
+
     computed: {
+      outerRingSize () {
+        return this.size - this.containerPadding * 2
+      },
+
       spinnerStyle () {
         return {
           height: `${this.size}px`,
-          width: `${this.size}px`
+          width: `${this.size}px`,
+          padding: `${this.containerPadding}px`
         }
       },
 
       ring1Style () {
         return {
-          height: `${this.size}px`,
-          width: `${this.size}px`,
+          height: `${this.outerRingSize}px`,
+          width: `${this.outerRingSize}px`,
           borderColor: this.color,
           animationDuration: `${this.animationDuration}ms`
         }
@@ -44,8 +55,8 @@
 
       ring2Style () {
         return {
-          height: `${this.size * 0.65}px`,
-          width: `${this.size * 0.65}px`,
+          height: `${this.outerRingSize * 0.65}px`,
+          width: `${this.outerRingSize * 0.65}px`,
           borderColor: this.color,
           animationDuration: `${this.animationDuration}ms`
         }
@@ -53,8 +64,8 @@
 
       ring3Style () {
         return {
-          height: `${this.size * 0.1}px`,
-          width: `${this.size * 0.1}px`,
+          height: `${this.outerRingSize * 0.1}px`,
+          width: `${this.outerRingSize * 0.1}px`,
           borderColor: this.color,
           animationDuration: `${this.animationDuration}ms`
         }
@@ -71,6 +82,7 @@
     align-items: center;
     flex-direction: row;
     overflow: hidden;
+    box-sizing: border-box;
   }
   .circle{
     position:absolute;

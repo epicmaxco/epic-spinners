@@ -61,7 +61,7 @@
       <li>
         <trinity-rings-spinner
           :animation-duration="1500"
-          :size="60"
+          :size="66"
           :color="spinnerColor"
         />
       </li>
