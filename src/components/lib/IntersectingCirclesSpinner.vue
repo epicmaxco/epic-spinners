@@ -1,6 +1,6 @@
 <template>
-  <div class="intersecting-circles-spinner">
-    <div class="spinnerBlock" :style="spinnerStyle">
+  <div class="intersecting-circles-spinner" :style="spinnerStyle">
+    <div class="spinnerBlock" :style="spinnerBlockStyle">
       <span v-for="(cs, index) in circleStyles" :style="cs" :key="index"></span>
     </div>
   </div>
@@ -15,9 +15,9 @@
         type: Number,
         default: 1200
       },
-      circleSize: {
+      size: {
         type: Number,
-        default: 50
+        default: 70
       },
       color: {
         type: String,
@@ -26,7 +26,18 @@
     },
 
     computed: {
+      circleSize () {
+        return this.size / 2
+      },
+
       spinnerStyle () {
+        return {
+          width: `${this.size}px`,
+          height: `${this.size}px`
+        }
+      },
+
+      spinnerBlockStyle () {
         return {
           animationDuration: `${this.animationDuration}ms`,
           width: `${this.circleSize}px`,
@@ -64,6 +75,11 @@
 
   .intersecting-circles-spinner {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
     .spinnerBlock {
       animation: intersecting-circles-spinners-animation 1200ms linear infinite;
       transform-origin: center;
