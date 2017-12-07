@@ -115,6 +115,10 @@
 <style  lang="scss" scoped>
   $time: 1;
 
+  * {
+    box-sizing: border-box;
+  }
+
   .diamond-spinner {
     display: flex;
     flex-direction: column;

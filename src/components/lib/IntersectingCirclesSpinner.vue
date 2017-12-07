@@ -58,6 +58,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .intersecting-circles-spinner {
     position: relative;
     .spinnerBlock {

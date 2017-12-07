@@ -83,6 +83,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .radar-spinner {
     position: relative;
   }

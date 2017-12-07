@@ -68,6 +68,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .circles-to-rhombuses-spinner {
     display: flex;
     align-items: center;
@@ -76,7 +80,6 @@
 
   .circle {
     transform: rotate(45deg);
-    box-sizing: border-box;
     border-radius: 10%;
     border: 3px solid #fff;
     overflow: hidden;

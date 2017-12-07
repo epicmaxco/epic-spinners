@@ -44,6 +44,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .orbit-spinner {
     border-radius: 50%;
     perspective: 800px;

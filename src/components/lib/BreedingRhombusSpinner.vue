@@ -79,6 +79,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .breeding-rhombus-spinner {
     position: relative;
     transform: rotate(45deg);

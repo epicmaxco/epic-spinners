@@ -70,6 +70,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .scaling-squares-spinner {
     position: relative;
     animation-name: swapping-squares-animation;

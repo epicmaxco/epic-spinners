@@ -58,6 +58,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .fulfilling-bouncing-circle-spinner {
     position: relative;
     animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;

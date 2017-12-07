@@ -76,6 +76,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   @keyframes self-building-square-spinner {
     0% {
       opacity: 0;

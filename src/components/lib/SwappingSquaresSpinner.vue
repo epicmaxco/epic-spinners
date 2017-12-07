@@ -72,6 +72,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .swapping-squares-spinner {
     position: relative;
   }

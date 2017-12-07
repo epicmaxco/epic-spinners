@@ -55,6 +55,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .half-circle-spinner {
     width: 60px;
     height: 60px;

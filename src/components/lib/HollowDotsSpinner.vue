@@ -73,9 +73,12 @@
   $dot-size: 15px;
   $animation-duration: 1000ms;
 
+  * {
+    box-sizing: border-box;
+  }
+
   .dot {
     border: ($dot-size / 5) solid #fff;
-    box-sizing: border-box;
     border-radius: 50%;
     float: left;
     transform: scale(0);

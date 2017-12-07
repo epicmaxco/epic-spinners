@@ -75,6 +75,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+  
   .trinity-rings-spinner {
     position: relative;
     display: flex;

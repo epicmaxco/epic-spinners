@@ -110,6 +110,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .pixel-spinner {
     width: 10px;
     height: 10px;

@@ -71,10 +71,13 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .fingerprint-spinner {
     overflow: hidden;
     position: relative;
-    box-sizing: border-box;
   }
 
   .spinner-ring {
@@ -82,7 +85,6 @@
     border-radius: 50%;
     border: 2px solid transparent;
     animation: polar-spinner-animation 1500ms cubic-bezier(0.680, -0.750, 0.265, 1.750) infinite forwards;
-    box-sizing: border-box;
     margin: auto;
     bottom: 0;
     left: 0;

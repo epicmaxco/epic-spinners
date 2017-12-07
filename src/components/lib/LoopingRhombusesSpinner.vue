@@ -70,6 +70,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .looping-rhombuses-spinner {
     position: relative;
     .rhombus {

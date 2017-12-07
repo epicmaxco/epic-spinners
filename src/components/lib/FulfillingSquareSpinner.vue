@@ -42,6 +42,10 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .fulfilling-square-spinner {
     display: inline-block;
     position: relative;
