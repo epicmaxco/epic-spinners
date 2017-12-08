@@ -1,6 +1,6 @@
 {
   "name": "epic-spinners",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "CSS spinners collection with vue.js integration",
   "author": "epicmax <hello@epicmax.co>",
   "main": "src/lib.js",
