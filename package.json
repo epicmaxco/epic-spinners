@@ -1,9 +1,9 @@
 {
   "name": "epic-spinners",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CSS spinners collection with vue.js integration",
   "author": "epicmax <hello@epicmax.co>",
-  "main": "dist/lib/epic-spinners.min.js",
+  "main": "src/lib.js",
   "private": false,
   "license": "MIT",
   "scripts": {
