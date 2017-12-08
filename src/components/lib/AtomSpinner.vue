@@ -1,6 +1,6 @@
 <template>
-  <div class="atom-spinner">
-    <div class="spinner-inner" :style="spinnerStyle">
+  <div class="atom-spinner" :style="spinnerStyle">
+    <div class="spinner-inner">
       <div class="spinner-line" :style="lineStyle"></div>
       <div class="spinner-line" :style="lineStyle"></div>
       <div class="spinner-line" :style="lineStyle"></div>
@@ -70,6 +70,8 @@
     .spinner-inner {
       position: relative;
       display: block;
+      height: 100%;
+      width: 100%;
     }
 
     .spinner-circle {
