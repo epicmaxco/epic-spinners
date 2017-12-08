@@ -97,7 +97,7 @@
       <li>
         <swapping-squares-spinner
           :animation-duration="1000"
-          :size="50"
+          :size="65"
           :color="spinnerColor"
         />
       </li>
