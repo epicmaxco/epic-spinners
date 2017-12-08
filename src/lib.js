@@ -20,7 +20,7 @@ import LoopingRhombusesSpinner from 'components/lib/LoopingRhombusesSpinner.vue'
 import HalfCircleSpinner from 'components/lib/HalfCircleSpinner.vue'
 import AtomSpinner from 'components/lib/AtomSpinner.vue'
 
-export default {
+export {
   HollowDotsSpinner,
   PixelSpinner,
   FlowerSpinner,
