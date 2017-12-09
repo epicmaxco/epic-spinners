@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Atom Spinner</title>
   <style>
     .atom-spinner, .atom-spinner * {
       box-sizing: border-box;
@@ -81,13 +81,13 @@
   </style>
 </head>
 <body>
-<div class="atom-spinner" :style="spinnerStyle">
+<div class="atom-spinner">
   <div class="spinner-inner">
-    <div class="spinner-line" :style="lineStyle"></div>
-    <div class="spinner-line" :style="lineStyle"></div>
-    <div class="spinner-line" :style="lineStyle"></div>
+    <div class="spinner-line"></div>
+    <div class="spinner-line"></div>
+    <div class="spinner-line"></div>
     <!--Chrome renders little circles malformed :(-->
-    <div class="spinner-circle" :style="circleStyle">
+    <div class="spinner-circle">
       &#9679;
     </div>
   </div>
