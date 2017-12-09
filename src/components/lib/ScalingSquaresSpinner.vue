@@ -78,7 +78,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    animation-name: swapping-squares-animation;
+    animation-name: scaling-squares-animation;
     animation-iteration-count: infinite;
     transform: rotate(0deg);
   }
@@ -92,12 +92,12 @@
 
     @for $i from 1 through 4 {
       &.square-#{$i} {
-        animation-name: swapping-squares-animation-child-#{$i};
+        animation-name: scaling-squares-spinner-animation-child-#{$i};
       }
     }
   }
 
-  @keyframes swapping-squares-animation {
+  @keyframes scaling-squares-animation {
 
     50% {
       transform: rotate(90deg);
@@ -108,25 +108,25 @@
     }
   }
 
-  @keyframes swapping-squares-animation-child-1 {
+  @keyframes scaling-squares-spinner-animation-child-1 {
     50% {
       transform: translate(150%,150%) scale(2,2);
     }
   }
 
-  @keyframes swapping-squares-animation-child-2 {
+  @keyframes scaling-squares-spinner-animation-child-2 {
     50% {
       transform: translate(-150%,150%) scale(2,2);
     }
   }
 
-  @keyframes swapping-squares-animation-child-3 {
+  @keyframes scaling-squares-spinner-animation-child-3 {
     50% {
       transform: translate(-150%,-150%) scale(2,2);
     }
   }
 
-  @keyframes swapping-squares-animation-child-4 {
+  @keyframes scaling-squares-spinner-animation-child-4 {
     50% {
       transform: translate(150%,-150%) scale(2,2);
     }
