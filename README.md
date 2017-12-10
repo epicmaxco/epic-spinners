@@ -1,8 +1,6 @@
-# epic-spinners
+# epic-spinners (currently under development)
 
 > Easy to use css spinners collection with vue.js integration
-
-## currently under development
 
 ## What's it all about?
 
@@ -25,7 +23,7 @@ Vue.js usage example
      <atom-spinner
           :animation-duration="1000"
           :size="60"
-          :color="spinnerColor"
+          :color="#ff1d5e"
      />
   </div>
 </template>
