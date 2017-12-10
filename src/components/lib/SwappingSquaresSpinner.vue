@@ -30,7 +30,7 @@
 
     data () {
       return {
-        animationBaseName: 'breeding-rhombus-spinner-animation-child',
+        animationBaseName: 'swapping-squares-animation-child',
         squaresNum: 4
       }
     },
