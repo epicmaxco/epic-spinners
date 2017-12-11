@@ -4,10 +4,10 @@
 
 ## What's it all about?
 
-We've collected and crafted a rich collection of spinners animated with css that are both available as html/css code snippets and as easily customizable vue.js components
+We've collected and crafted a rich collection of spinners animated with css which are available both as html/css code snippets and easily customizable vue.js components
 
 ## Demo & Documentation
-Vistit our [gallery](http://vuestic.epicmax.co) to see vue.js usages examples and html/css source code
+Visit our [gallery](http://vuestic.epicmax.co) to see vue.js usage examples and html/css source code
 
 ## Installation
 ```
@@ -41,7 +41,7 @@ Vue.js usage example
   }
 </script>
 ```
-To use pure html/css version visit our [gallery](http://vuestic.epicmax.co) and click any spinner to see it's html/css source code
+To use pure html/css version, visit our [gallery](http://vuestic.epicmax.co) and click any spinner to see its html/css source code
 
 ## Vue.js components list
 You can easily configure spinners' size, color and animation speed
@@ -176,7 +176,7 @@ You can easily configure spinners' size, color and animation speed
 - Like our page on [Facebook](https://www.facebook.com/epicmaxco) :thumbsup:
 
 ## Can I hire you guys?
-Yes!  Visit [our homepage](http://epicmax.co/) or simply leave us a message to [hello@epicmax.co](mailto:hello@epicmax.co). We will be happy to work with you!
+Yes!  Visit [our homepage](http://epicmax.co/) or simply send us a message to [hello@epicmax.co](mailto:hello@epicmax.co). We will be happy to work with you!
 
 ## License
 [MIT](https://github.com/epicmaxco/vuestic-admin/blob/master/LICENSE) license.
