@@ -54,8 +54,8 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  * {
+<style scoped>
+  .half-circle-spinner, .half-circle-spinner * {
     box-sizing: border-box;
   }
 
@@ -64,23 +64,25 @@
     height: 60px;
     border-radius: 100%;
     position: relative;
+  }
 
-    .circle {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 100%;
-      border: 6px solid transparent;
+  .half-circle-spinner .circle {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: calc(60px / 10) solid transparent;
+  }
 
-      &.circle-1 {
-        animation: half-circle-spinner-animation 1s infinite;
-      }
+  .half-circle-spinner .circle.circle-1 {
+    border-top-color: #ff1d5e;
+    animation: half-circle-spinner-animation 1s infinite;
+  }
 
-      &.circle-2 {
-        animation: half-circle-spinner-animation 1s infinite alternate;
-      }
-    }
+  .half-circle-spinner .circle.circle-2 {
+    border-bottom-color: #ff1d5e;
+    animation: half-circle-spinner-animation 1s infinite alternate;
   }
 
   @keyframes half-circle-spinner-animation {
@@ -92,6 +94,4 @@
       transform: rotate(360deg);
     }
   }
-
-
 </style>

@@ -69,20 +69,38 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  $dot-size: 15px;
-  $animation-duration: 1000ms;
-
-  * {
+<style scoped>
+  .hollow-dots-spinner, .hollow-dots-spinner * {
     box-sizing: border-box;
   }
 
-  .dot {
-    border: ($dot-size / 5) solid #fff;
+  .hollow-dots-spinner {
+    height: 15px;
+    width: calc(30px * 3);
+  }
+
+  .hollow-dots-spinner .dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 calc(15px / 2);
+    border: calc(15px / 5) solid #ff1d5e;
     border-radius: 50%;
     float: left;
     transform: scale(0);
-    animation: hollow-dots-spinner-animation $animation-duration ease infinite 0ms;
+    animation: hollow-dots-spinner-animation 1000ms ease infinite 0ms;
+  }
+
+  .hollow-dots-spinner .dot:nth-child(1) {
+    animation-delay: calc(300ms * 1);
+  }
+
+  .hollow-dots-spinner .dot:nth-child(2) {
+    animation-delay: calc(300ms * 2);
+  }
+
+  .hollow-dots-spinner .dot:nth-child(3) {
+    animation-delay: calc(300ms * 3);
+
   }
 
   @keyframes hollow-dots-spinner-animation {

@@ -82,37 +82,56 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  * {
+<style scoped>
+  .radar-spinner, .radar-spinner * {
     box-sizing: border-box;
   }
 
   .radar-spinner {
+    height: 60px;
+    width: 60px;
     position: relative;
   }
 
-  .circle {
+  .radar-spinner .circle {
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     animation: radar-spinner-animation 2s infinite;
+  }
 
-    &.three {
-      left: 10px;
-      top: 10px;
-      width: 90px;
-      height: 90px;
-      animation-delay: 0.3s;
-    }
+  .radar-spinner .circle:nth-child(1) {
+    padding: calc(60px * 5 * 2 * 0 / 110);
+    animation-delay: 300ms;
+  }
 
-    .circle-inner, .circle-inner-container {
-      height: 100%;
-      width: 100%;
-      border-radius: 50%;
-      border: 5px solid transparent;
-    }
+  .radar-spinner .circle:nth-child(2) {
+    padding: calc(60px * 5 * 2 * 1 / 110);
+    animation-delay: 300ms;
+  }
+
+  .radar-spinner .circle:nth-child(3) {
+    padding: calc(60px * 5 * 2 * 2 / 110);
+    animation-delay: 300ms;
+  }
+
+  .radar-spinner .circle:nth-child(4) {
+    padding: calc(60px * 5 * 2 * 3 / 110);
+    animation-delay: 0ms;
+  }
+
+  .radar-spinner .circle-inner, .radar-spinner .circle-inner-container {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: calc(60px * 5 / 110) solid transparent;
+  }
+
+  .radar-spinner .circle-inner {
+    border-left-color: #ff1d5e;
+    border-right-color: #ff1d5e;
   }
 
   @keyframes radar-spinner-animation {

@@ -57,30 +57,37 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  * {
+<style scoped>
+  .fulfilling-bouncing-circle-spinner, .fulfilling-bouncing-circle-spinner * {
     box-sizing: border-box;
   }
 
   .fulfilling-bouncing-circle-spinner {
+    height: 60px;
+    width: 60px;
     position: relative;
     animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;
   }
 
-  .orbit {
+  .fulfilling-bouncing-circle-spinner .orbit {
+    height: 60px;
+    width: 60px;
     position: absolute;
     top: 0;
     left: 0;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: calc(60px * 0.03) solid #ff1d5e;
     animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite 4000ms ease;
   }
 
-  .circle {
+  .fulfilling-bouncing-circle-spinner .circle {
+    height: 60px;
+    width: 60px;
+    color: #ff1d5e;
     display: block;
     border-radius: 50%;
     position: relative;
-    border: 6px solid #fff;
+    border: calc(60px * 0.1) solid #ff1d5e;
     animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
     transform: rotate(0deg) scale(1);
   }

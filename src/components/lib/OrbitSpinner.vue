@@ -43,17 +43,19 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  * {
+<style scoped>
+  .orbit-spinner, .orbit-spinner * {
     box-sizing: border-box;
   }
 
   .orbit-spinner {
+    height: 55px;
+    width: 55px;
     border-radius: 50%;
     perspective: 800px;
   }
 
-  .orbit {
+  .orbit-spinner .orbit {
     position: absolute;
     box-sizing: border-box;
     width: 100%;
@@ -61,25 +63,25 @@
     border-radius: 50%;
   }
 
-  .orbit.one {
+  .orbit-spinner .orbit:nth-child(1) {
     left: 0%;
     top: 0%;
-    animation: orbit-spinner-orbit-one-animation 1s linear infinite;
-    border-bottom: 3px solid #fff;
+    animation: orbit-spinner-orbit-one-animation 1200ms linear infinite;
+    border-bottom: 3px solid #ff1d5e;
   }
 
-  .orbit.two {
+  .orbit-spinner .orbit:nth-child(2) {
     right: 0%;
     top: 0%;
-    animation: orbit-spinner-orbit-two-animation 1s linear infinite;
-    border-right: 3px solid #fff;
+    animation: orbit-spinner-orbit-two-animation 1200ms linear infinite;
+    border-right: 3px solid #ff1d5e;
   }
 
-  .orbit.three {
+  .orbit-spinner .orbit:nth-child(3) {
     right: 0%;
     bottom: 0%;
-    animation: orbit-spinner-orbit-three-animation 1s linear infinite;
-    border-top: 3px solid #fff;
+    animation: orbit-spinner-orbit-three-animation 1200ms linear infinite;
+    border-top: 3px solid #ff1d5e;
   }
 
   @keyframes orbit-spinner-orbit-one-animation {

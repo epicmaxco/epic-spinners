@@ -69,12 +69,14 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  * {
+<style scoped>
+  .swapping-squares-spinner, .swapping-squares-spinner * {
     box-sizing: border-box;
   }
 
   .swapping-squares-spinner {
+    height: 65px;
+    width: 65px;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -82,18 +84,35 @@
     align-items: center;
   }
 
-  .square {
+  .swapping-squares-spinner .square {
+    height: calc(65px * 0.25 / 1.3);
+    width:  calc(65px * 0.25 / 1.3);
+    animation-duration: 1000ms;
+    border: calc(65px * 0.04 / 1.3) solid #ff1d5e;
     margin-right: auto;
     margin-left: auto;
-    border-style: solid;
     position: absolute;
     animation-iteration-count: infinite;
+  }
 
-    @for $i from 1 through 4 {
-      &.square-#{$i} {
-        animation-name: swapping-squares-animation-child-#{$i};
-      }
-    }
+  .swapping-squares-spinner .square:nth-child(1) {
+    animation-name: swapping-squares-animation-child-1;
+    animation-delay: 500ms;
+  }
+
+  .swapping-squares-spinner .square:nth-child(2) {
+    animation-name: swapping-squares-animation-child-2;
+    animation-delay: 0ms;
+  }
+
+  .swapping-squares-spinner .square:nth-child(3) {
+    animation-name: swapping-squares-animation-child-3;
+    animation-delay: 500ms;
+  }
+
+  .swapping-squares-spinner .square:nth-child(4) {
+    animation-name: swapping-squares-animation-child-4;
+    animation-delay: 0ms;
   }
 
   @keyframes swapping-squares-animation-child-1 {

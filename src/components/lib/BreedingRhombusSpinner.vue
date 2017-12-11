@@ -78,35 +78,84 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  * {
-    box-sizing: border-box;
-  }
-
+<style scoped>
   .breeding-rhombus-spinner {
+    height: 65px;
+    width: 65px;
     position: relative;
     transform: rotate(45deg);
   }
 
-  .rhombus {
+  .breeding-rhombus-spinner, .breeding-rhombus-spinner * {
+    box-sizing: border-box;
+  }
+
+  .breeding-rhombus-spinner .rhombus {
+    height: calc(65px / 7.5);
+    width: calc(65px / 7.5);
+    animation-duration: 2000ms;
+    top: calc(65px / 2.3077);
+    left: calc(65px / 2.3077);
+    background-color: #ff1d5e;
     position: absolute;
     animation-iteration-count: infinite;
-
-    &:nth-child(2n+0) {
-      margin-right: 0;
-    }
-
-    @for $i from 1 through 8 {
-      &.child-#{$i} {
-        animation-name: breeding-rhombus-spinner-animation-child-#{$i};
-      }
-    }
-
-    &.big {
-      animation: breeding-rhombus-spinner-animation-child-big 2s infinite;
-      animation-delay: 0.5s;
-    }
   }
+
+  .breeding-rhombus-spinner .rhombus:nth-child(2n+0) {
+    margin-right: 0;
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-1 {
+    animation-name: breeding-rhombus-spinner-animation-child-1;
+    animation-delay: calc(100ms * 1);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-2 {
+    animation-name: breeding-rhombus-spinner-animation-child-2;
+    animation-delay: calc(100ms * 2);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-3 {
+    animation-name: breeding-rhombus-spinner-animation-child-3;
+    animation-delay: calc(100ms * 3);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-4 {
+    animation-name: breeding-rhombus-spinner-animation-child-4;
+    animation-delay: calc(100ms * 4);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-5 {
+    animation-name: breeding-rhombus-spinner-animation-child-5;
+    animation-delay: calc(100ms * 5);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-6 {
+    animation-name: breeding-rhombus-spinner-animation-child-6;
+    animation-delay: calc(100ms * 6);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-7 {
+    animation-name: breeding-rhombus-spinner-animation-child-7;
+    animation-delay: calc(100ms * 7);
+  }
+
+  .breeding-rhombus-spinner .rhombus.child-8 {
+    animation-name: breeding-rhombus-spinner-animation-child-8;
+    animation-delay: calc(100ms * 8);
+  }
+
+  .breeding-rhombus-spinner .rhombus.big {
+    height: calc(65px / 3);
+    width: calc(65px / 3);
+    animation-duration: 2000ms;
+    top: calc(65px / 3);
+    left: calc(65px / 3);
+    background-color: #ff1d5e;
+    animation: breeding-rhombus-spinner-animation-child-big 2s infinite;
+    animation-delay: 0.5s;
+  }
+
 
   @keyframes breeding-rhombus-spinner-animation-child-1 {
     50% {

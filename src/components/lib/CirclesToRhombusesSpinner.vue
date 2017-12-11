@@ -67,30 +67,43 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  * {
+<style scoped>
+  .circles-to-rhombuses-spinner, .circles-to-rhombuses-spinner * {
     box-sizing: border-box;
   }
 
   .circles-to-rhombuses-spinner {
+    height: 15px;
+    width: calc( (15px + 15px * 1.125) * 3);
     display: flex;
     align-items: center;
     justify-content: center
   }
 
-  .circle {
+  .circles-to-rhombuses-spinner .circle {
+    height: 15px;
+    width: 15px;
+    margin-left: calc(15px * 1.125);
     transform: rotate(45deg);
     border-radius: 10%;
-    border: 3px solid #fff;
+    border: 3px solid #ff1d5e;
     overflow: hidden;
     background: transparent;
 
+    animation: circles-to-rhombuses-animation 1200ms linear infinite;
+  }
 
-    animation: circles-to-rhombuses-animation 950ms linear infinite;
+  .circles-to-rhombuses-spinner .circle:nth-child(1) {
+    animation-delay: calc(150ms * 1);
+    margin-left: 0
+  }
 
-    &:first-child {
-      margin-left: 0!important;
-    }
+  .circles-to-rhombuses-spinner .circle:nth-child(2) {
+    animation-delay: calc(150ms * 2);
+  }
+
+  .circles-to-rhombuses-spinner .circle:nth-child(3) {
+    animation-delay: calc(150ms * 3);
   }
 
   @keyframes circles-to-rhombuses-animation {
@@ -121,6 +134,5 @@
       opacity: 0.4;
     }
   }
-
 
 </style>

@@ -74,12 +74,15 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  * {
+<style scoped>
+  .trinity-rings-spinner, .trinity-rings-spinner * {
     box-sizing: border-box;
   }
 
   .trinity-rings-spinner {
+    height: 66px;
+    width: 66px;
+    padding: 3px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -88,24 +91,30 @@
     overflow: hidden;
     box-sizing: border-box;
   }
-  .circle{
+  .trinity-rings-spinner .circle {
     position:absolute;
     display:block;
     border-radius:50%;
-    border-style: solid;
+    border: 3px solid #ff1d5e;
     opacity: 1;
   }
 
-  .circle1 {
-    animation : trinity-rings-spinner-circle1-animation 1s infinite linear;
+  .trinity-rings-spinner .circle:nth-child(1) {
+    height: 60px;
+    width: 60px;
+    animation : trinity-rings-spinner-circle1-animation 1.5s infinite linear;
     border-width: 3px;
   }
-  .circle2 {
-    animation : trinity-rings-spinner-circle2-animation 1s infinite linear;
+  .trinity-rings-spinner .circle:nth-child(2) {
+    height: calc(60px * 0.65);
+    width: calc(60px * 0.65);
+    animation : trinity-rings-spinner-circle2-animation 1.5s infinite linear;
     border-width: 2px;
   }
-  .circle3 {
-    animation:trinity-rings-spinner-circle3-animation 1s infinite linear;
+  .trinity-rings-spinner .circle:nth-child(3) {
+    height: calc(60px * 0.1);
+    width: calc(60px * 0.1);
+    animation:trinity-rings-spinner-circle3-animation 1.5s infinite linear;
     border-width: 1px;
   }
 

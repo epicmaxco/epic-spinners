@@ -67,35 +67,51 @@
   }
 </script>
 
-<style  lang="scss" scoped>
-  * {
+<style scoped>
+  .scaling-squares-spinner, .scaling-squares-spinner * {
     box-sizing: border-box;
   }
 
   .scaling-squares-spinner {
+    height: 65px;
+    width: 65px;
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    animation-name: scaling-squares-animation;
+    animation: scaling-squares-animation 1250ms;
     animation-iteration-count: infinite;
     transform: rotate(0deg);
   }
 
-  .square {
+  .scaling-squares-spinner .square {
+    height: calc(65px * 0.25 / 1.3);
+    width: calc(65px * 0.25 / 1.3);
     margin-right: auto;
     margin-left: auto;
-    border-style: solid;
+    border: calc(65px * 0.04 / 1.3) solid #ff1d5e;
     position: absolute;
+    animation-duration: 1250ms;
     animation-iteration-count: infinite;
-
-    @for $i from 1 through 4 {
-      &.square-#{$i} {
-        animation-name: scaling-squares-spinner-animation-child-#{$i};
-      }
-    }
   }
+
+  .scaling-squares-spinner .square:nth-child(1) {
+    animation-name: scaling-squares-spinner-animation-child-1;
+  }
+
+  .scaling-squares-spinner .square:nth-child(2) {
+    animation-name: scaling-squares-spinner-animation-child-2;
+  }
+
+  .scaling-squares-spinner .square:nth-child(3) {
+    animation-name: scaling-squares-spinner-animation-child-3;
+  }
+
+  .scaling-squares-spinner .square:nth-child(4) {
+    animation-name: scaling-squares-spinner-animation-child-4;
+  }
+
 
   @keyframes scaling-squares-animation {
 
