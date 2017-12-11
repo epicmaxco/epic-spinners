@@ -159,7 +159,6 @@
   import FulfillingSquareSpinner from './lib/FulfillingSquareSpinner.vue'
   import CirclesToRhombusesSpinner from './lib/CirclesToRhombusesSpinner.vue'
   import SemipolarSpinner from './lib/SemipolarSpinner.vue'
-  import DiamondSpinner from './lib/DiamondSpinner.vue'
   import BreedingRhombusSpinner from './lib/BreedingRhombusSpinner.vue'
   import SwappingSquaresSpinner from './lib/SwappingSquaresSpinner.vue'
   import ScalingSquaresSpinner from './lib/ScalingSquaresSpinner.vue'
@@ -185,7 +184,6 @@
       FulfillingSquareSpinner,
       CirclesToRhombusesSpinner,
       SemipolarSpinner,
-      DiamondSpinner,
       BreedingRhombusSpinner,
       SwappingSquaresSpinner,
       ScalingSquaresSpinner,

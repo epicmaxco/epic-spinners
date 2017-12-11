@@ -8,7 +8,6 @@ import TrinityRingsSpinner from './components/lib/TrinityRingsSpinner.vue'
 import FulfillingSquareSpinner from './components/lib/FulfillingSquareSpinner.vue'
 import CirclesToRhombusesSpinner from './components/lib/CirclesToRhombusesSpinner.vue'
 import SemipolarSpinner from './components/lib/SemipolarSpinner.vue'
-import DiamondSpinner from './components/lib/DiamondSpinner.vue'
 import BreedingRhombusSpinner from './components/lib/BreedingRhombusSpinner.vue'
 import SwappingSquaresSpinner from './components/lib/SwappingSquaresSpinner.vue'
 import ScalingSquaresSpinner from './components/lib/ScalingSquaresSpinner.vue'
@@ -31,7 +30,6 @@ export {
   FulfillingSquareSpinner,
   CirclesToRhombusesSpinner,
   SemipolarSpinner,
-  DiamondSpinner,
   BreedingRhombusSpinner,
   SwappingSquaresSpinner,
   ScalingSquaresSpinner,
