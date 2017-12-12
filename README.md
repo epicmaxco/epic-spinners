@@ -4,7 +4,7 @@ Easy to use css spinners collection with vue.js integration
 
 <p align="center"> 
   <a href="http://epic-spinners.epicmax.co" target="_blank">
-    <img src="[Imgur](https://i.imgur.com/RYxUVsM.png)" align="center" width="888px"/>
+    <img src="https://i.imgur.com/RYxUVsM.png" align="center" width="888px"/>
   </a> 
 </p>
 
