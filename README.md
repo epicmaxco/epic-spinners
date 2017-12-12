@@ -1,13 +1,19 @@
-# epic-spinners (currently under development)
+# epic-spinners
 
-> Easy to use css spinners collection with vue.js integration
+Easy to use css spinners collection with vue.js integration
+
+<p align="center"> 
+  <a href="http://epic-spinners.epicmax.co" target="_blank">
+    <img src="[Imgur](https://i.imgur.com/RYxUVsM.png)" align="center" width="888px"/>
+  </a> 
+</p>
 
 ## What's it all about?
 
 We've collected and crafted a rich collection of spinners animated with css which are available both as html/css code snippets and easily customizable vue.js components
 
 ## Demo & Documentation
-Visit our [gallery](http://vuestic.epicmax.co) to see vue.js usage examples and html/css source code
+Visit our [gallery](http://epic-spinners.epicmax.co) to see vue.js components usage examples and html/css source code
 
 ## Installation
 ```
@@ -41,7 +47,7 @@ Vue.js usage example
   }
 </script>
 ```
-To use pure html/css version, visit our [gallery](http://vuestic.epicmax.co) and click any spinner to see its html/css source code
+To use pure html/css version, visit our [gallery](http://epic-spinners.epicmax.co) and click any spinner to see its html/css source code
 
 ## Vue.js components list
 You can easily configure spinners' size, color and animation speed
