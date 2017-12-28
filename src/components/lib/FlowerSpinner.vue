@@ -17,7 +17,7 @@
     props: {
       animationDuration: {
         type: Number,
-        default: 25000
+        default: 2500
       },
       size: {
         type: Number,
