@@ -176,7 +176,7 @@ You can easily configure spinners' size, color and animation speed
 />
 ```
 ## Epic spinners for other frameworks
-- [angular-epic-spinners](https://hackafro.github.io/https://github.com/hackafro/angular-epic-spinners) by @HackAfro
+- [angular-epic-spinners](https://github.com/hackafro/angular-epic-spinners) by @HackAfro
 
 ## How can I support developers?
 - Star our GitHub repo :star:
