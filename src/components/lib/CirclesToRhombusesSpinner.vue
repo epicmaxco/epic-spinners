@@ -58,6 +58,10 @@
             animationDelay: `${i * delay}ms`
           }, this.circleStyle)
 
+          if (i === 1) {
+            style.marginLeft = 0
+          }
+
           circlesStyles.push(style)
         }
 
