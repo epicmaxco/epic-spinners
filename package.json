@@ -1,6 +1,6 @@
 {
   "name": "epic-spinners",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easy to use css spinners collection with vue.js integration",
   "author": "epicmax <hello@epicmax.co>",
   "main": "src/lib.js",
@@ -8,8 +8,8 @@
   "license": "MIT",
   "url": "https://github.com/epicmaxco/epic-spinners",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/epicmaxco/epic-spinners.git"
+    "type": "git",
+    "url": "https://github.com/epicmaxco/epic-spinners.git"
   },
   "scripts": {
     "prepublishOnly": "npm run build",
