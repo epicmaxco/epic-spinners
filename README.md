@@ -10,7 +10,9 @@ Easy to use css spinners collection with vue.js integration
 
 ## What's it all about?
 
-We've collected and crafted a rich collection of spinners animated with css which are available both as html/css code snippets and easily customizable vue.js components
+We've collected and crafted a rich collection of spinners animated with css which are available both as html/css code snippets and easily customizable vue.js components.
+
+Special thanks to [@martinvd](https://github.com/martinvd) for his outstanding codepens :)
 
 ## Demo & Documentation
 Visit our [gallery](http://epic-spinners.epicmax.co) to see vue.js components usage examples and html/css source code
