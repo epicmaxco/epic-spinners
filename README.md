@@ -15,7 +15,7 @@ We've collected and crafted a rich collection of spinners animated with css whic
 Special thanks to [@martinvd](https://github.com/martinvd) for his outstanding codepens :)
 
 ## Demo & Documentation
-Visit our [gallery](http://epic-spinners.epicmax.co) to see vue.js components usage examples and html/css source code
+[View demo](http://epic-spinners.epicmax.co) to see vue.js components usage examples and html/css source code
 
 ## Installation
 ```
