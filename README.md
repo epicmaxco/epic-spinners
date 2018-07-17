@@ -1,6 +1,8 @@
 # epic-spinners
 
-Easy to use css spinners collection with vue.js integration
+Easy to use css spinners collection with Vue.js integration. Developed by [Epicmax](https://epicmax.co).
+
+Subscribe to our [newsletter](https://epicmax.co/newsletter) to get Epic Spinners updates, our team's stories and Vue.js materials hand-picked by Epicmax.
 
 <p align="center"> 
   <a href="http://epic-spinners.epicmax.co" target="_blank">
@@ -186,9 +188,10 @@ You can easily configure spinners' size, color and animation speed
 - Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
 - Follow us on [Twitter](https://twitter.com/epicmaxco) :feet:
 - Like our page on [Facebook](https://www.facebook.com/epicmaxco) :thumbsup:
+- Subscribe to our [newsletter](https://epicmax.co/newsletter) :postbox:
 
 ## Can I hire you guys?
-Yes!  Visit [our homepage](http://epicmax.co/) or simply send us a message to [hello@epicmax.co](mailto:hello@epicmax.co). We will be happy to work with you!
+Yes!  Visit [our homepage](https://epicmax.co/) or simply send us a message to [hello@epicmax.co](mailto:hello@epicmax.co). We will be happy to work with you!
 
 ## License
 [MIT](https://github.com/epicmaxco/vuestic-admin/blob/master/LICENSE) license.
