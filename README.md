@@ -183,6 +183,11 @@ You can easily configure spinners' size, color and animation speed
 - [angular-epic-spinners](https://github.com/hackafro/angular-epic-spinners) by @HackAfro
 - [react-epic-spinners](https://github.com/bondz/react-epic-spinners) by @bondz
 
+## Contributing
+Thanks for all your wonderful PRs, issues and ideas!
+
+[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/0)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/0)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/1)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/1)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/2)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/2)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/3)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/3)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/4)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/4)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/5)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/5)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/6)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/6)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/7)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/7)
+
 ## How can I support developers?
 - Star our GitHub repo :star:
 - Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
