@@ -1,6 +1,6 @@
 {
   "name": "epic-spinners",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Easy to use css spinners collection with vue.js integration",
   "author": "epicmax <hello@epicmax.co>",
   "main": "src/lib.js",
@@ -21,8 +21,8 @@
     "build:docs": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
-  "dependencies": {
-    "vue": "2.5.16"
+  "peerDependencies": {
+    "vue": "^2.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -63,9 +63,10 @@
     "sass-loader": "^6.0.5",
     "node-sass": "^4.5.2",
     "url-loader": "^0.5.8",
+    "vue": "^2.5.2",
     "vue-loader": "^12.1.0",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "2.5.16",
+    "vue-template-compiler": "^2.5.2  ",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
