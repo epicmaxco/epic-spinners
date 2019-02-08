@@ -182,6 +182,7 @@ You can easily configure spinners' size, color and animation speed
 ## Epic spinners for other frameworks
 - [angular-epic-spinners](https://github.com/hackafro/angular-epic-spinners) by @HackAfro
 - [react-epic-spinners](https://github.com/bondz/react-epic-spinners) by @bondz
+- [wc-epic-spinners](https://github.com/craigjennings11/wc-epic-spinners) by @craigjennings11
 
 ## Contributing
 Thanks for all your wonderful PRs, issues and ideas!
