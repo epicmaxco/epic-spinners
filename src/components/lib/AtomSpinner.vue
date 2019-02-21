@@ -28,7 +28,7 @@
       },
       color: {
         type: String,
-        default: 'red'
+        default: '#fff'
       }
     },
 
