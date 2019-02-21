@@ -18,6 +18,7 @@ import SpringSpinner from './components/lib/SpringSpinner.vue'
 import LoopingRhombusesSpinner from './components/lib/LoopingRhombusesSpinner.vue'
 import HalfCircleSpinner from './components/lib/HalfCircleSpinner.vue'
 import AtomSpinner from './components/lib/AtomSpinner.vue'
+import CircularDotsSpinner from './components/lib/CircularDotsSpinner.vue'
 
 export {
   HollowDotsSpinner,
@@ -39,5 +40,6 @@ export {
   SpringSpinner,
   LoopingRhombusesSpinner,
   HalfCircleSpinner,
-  AtomSpinner
+  AtomSpinner,
+  CircularDotsSpinner
 }

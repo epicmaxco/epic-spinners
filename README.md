@@ -4,10 +4,10 @@ Easy to use css spinners collection with Vue.js integration. Developed by [Epicm
 
 Subscribe to our [newsletter](https://epicmax.co/newsletter) to get Epic Spinners updates, our team's stories and Vue.js materials hand-picked by Epicmax.
 
-<p align="center"> 
+<p align="center">
   <a href="http://epic-spinners.epicmax.co" target="_blank">
     <img src="https://i.imgur.com/RYxUVsM.png" align="center" width="888px"/>
-  </a> 
+  </a>
 </p>
 
 ## What's it all about?
@@ -25,7 +25,7 @@ npm install --save epic-spinners
 ```
 
 ## Usage
-Vue.js usage example 
+Vue.js usage example
 
 ``` vue
 <template>
@@ -42,7 +42,7 @@ Vue.js usage example
   // To use minified css and js files instead of .vue single file components:
   // import 'epic-spinners/dist/lib/epic-spinners.min.css'
   // import {AtomSpinner} from 'epic-spinners/dist/lib/epic-spinners.min.js'
-  
+
   import {AtomSpinner} from 'epic-spinners'
   export default {
     components: {
@@ -124,19 +124,19 @@ You can easily configure spinners' size, color and animation speed
   :circle-size="15"
   :color="'#ff1d5e'"
 />
-    
+
 <semipolar-spinner
   :animation-duration="2000"
   :size="65"
   :color="'#ff1d5e'"
 />
-    
+
 <self-building-square-spinner
   :animation-duration="6000"
   :size="40"
   :color="'#ff1d5e'"
 />
-    
+
 <swapping-squares-spinner
   :animation-duration="1000"
   :size="65"
@@ -178,6 +178,12 @@ You can easily configure spinners' size, color and animation speed
   :size="65"
   :color="'#ff1d5e'"
 />
+
+<circular-dots-spinner
+  :animation-duration="2000"
+  :size="65"
+  :color="'#ff1d5e'"
+/>
 ```
 ## Epic spinners for other frameworks
 - [angular-epic-spinners](https://github.com/hackafro/angular-epic-spinners) by @HackAfro
@@ -200,6 +206,3 @@ Yes!  Visit [our homepage](https://epicmax.co/) or simply send us a message to [
 
 ## License
 [MIT](https://github.com/epicmaxco/vuestic-admin/blob/master/LICENSE) license.
-
-
-

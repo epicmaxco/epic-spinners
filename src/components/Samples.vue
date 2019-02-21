@@ -144,6 +144,13 @@
           :color="spinnerColor"
         />
       </li>
+      <li>
+        <circular-dots-spinner
+          :animation-duration="5000"
+          :size="65"
+          :color="spinnerColor"
+        />
+      </li>
     </ul>
   </div>
 </template>
@@ -169,6 +176,7 @@
   import LoopingRhombusesSpinner from './lib/LoopingRhombusesSpinner.vue'
   import HalfCircleSpinner from './lib/HalfCircleSpinner.vue'
   import AtomSpinner from './lib/AtomSpinner.vue'
+  import CircularDotsSpinner from './lib/CircularDotsSpinner.vue'
 
   export default {
     name: 'Samples',
@@ -193,7 +201,8 @@
       SpringSpinner,
       LoopingRhombusesSpinner,
       HalfCircleSpinner,
-      AtomSpinner
+      AtomSpinner,
+      CircularDotsSpinner
     },
 
     data () {
