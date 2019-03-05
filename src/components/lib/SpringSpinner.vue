@@ -33,7 +33,8 @@
     data () {
       return {
         animationBaseName: 'spring-spinner-animation',
-        currentAnimationName: ''
+        currentAnimationName: '',
+        previousAnimationName: ''
       }
     },
 
@@ -78,14 +79,18 @@
       this.updateAnimation()
     },
 
+    beforeDestroy () {
+      utils.removeKeyframes(this.currentAnimationName)
+    },
+
     methods: {
       updateAnimation () {
-        this.updateAnimationName()
-        utils.appendKeyframes(this.currentAnimationName, this.generateKeyframes())
-      },
-
-      updateAnimationName () {
         this.currentAnimationName = `${this.animationBaseName}-${Date.now()}`
+        utils.appendKeyframes(this.currentAnimationName, this.generateKeyframes())
+        if (this.previousAnimationName) {
+          utils.removeKeyframes(this.previousAnimationName)
+        }
+        this.previousAnimationName = this.currentAnimationName
       },
 
       generateKeyframes () {
