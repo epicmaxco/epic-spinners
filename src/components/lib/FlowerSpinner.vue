@@ -34,7 +34,9 @@
         smallerDotAnimationBaseName: 'flower-spinner-smaller-dot-animation',
         biggerDotAnimationBaseName: 'flower-spinner-bigger-dot-animation',
         currentSmallerDotAnimationBaseName: '',
-        currentBiggerDotAnimationBaseName: ''
+        currentBiggerDotAnimationBaseName: '',
+        previousSmallerDotAnimationBaseName: '',
+        previousBiggerDotAnimationBaseName: ''
       }
     },
 
@@ -87,11 +89,24 @@
       this.updateAnimation()
     },
 
+    beforeDestroy () {
+      utils.removeKeyframes(this.currentBiggerDotAnimationBaseName)
+      utils.removeKeyframes(this.currentSmallerDotAnimationBaseName)
+    },
+
     methods: {
       updateAnimation () {
         this.updateAnimationName()
         utils.appendKeyframes(this.currentSmallerDotAnimationBaseName, this.generateSmallerDotKeyframes())
         utils.appendKeyframes(this.currentBiggerDotAnimationBaseName, this.generateBiggerDotKeyframes())
+        if (this.previousSmallerDotAnimationBaseName) {
+          utils.removeKeyframes(this.previousSmallerDotAnimationBaseName)
+        }
+        this.previousSmallerDotAnimationBaseName = this.currentSmallerDotAnimationBaseName
+        if (this.previousBiggerDotAnimationBaseName) {
+          utils.removeKeyframes(this.previousBiggerDotAnimationBaseName)
+        }
+        this.previousBiggerDotAnimationBaseName = this.currentBiggerDotAnimationBaseName
       },
 
       updateAnimationName () {
