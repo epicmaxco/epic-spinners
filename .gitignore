@@ -4,6 +4,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 dist/
+index.html
 
 # Editor directories and files
 .idea
