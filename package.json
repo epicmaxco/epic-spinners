@@ -4,6 +4,7 @@
   "description": "Easy to use css spinners collection with vue.js integration",
   "author": "epicmax <hello@epicmax.co>",
   "main": "src/lib.js",
+  "types": "src/lib.d.ts",
   "private": false,
   "license": "MIT",
   "url": "https://github.com/epicmaxco/epic-spinners",
