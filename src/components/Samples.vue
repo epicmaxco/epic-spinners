@@ -1,17 +1,41 @@
 <template>
   <div class="samples">
-    <ul>
+    <div>
+      <label>
+        <input type="checkbox" v-model="show" /> Show
+      </label>
+    </div>
+    <div>
+      <label>
+        Duration
+        <input v-model.number="animationDuration" />
+      </label>
+    </div>
+    <div>
+      <label>
+        Size
+        <input v-model.number="size" />
+      </label>
+    </div>
+    <div>
+      <label>
+        Color
+        <input type="color" v-model="spinnerColor" />
+      </label>
+    </div>
+
+    <ul v-if="show">
       <li>
         <flower-spinner
-          :animation-duration="2500"
-          :size="70"
+          :animation-duration="animationDuration"
+          :size="size"
           :color="spinnerColor"
         />
       </li>
       <li>
         <pixel-spinner
-          :animation-duration="2000"
-          :pixel-size="70"
+          :animation-duration="animationDuration"
+          :size="size"
           :color="spinnerColor"
         />
       </li>
@@ -118,8 +142,8 @@
       </li>
       <li>
         <spring-spinner
-          :animation-duration="3000"
-          :size="60"
+          :animation-duration="animationDuration"
+          :size="size"
           :color="spinnerColor"
         />
       </li>
@@ -198,6 +222,9 @@
 
     data () {
       return {
+        animationDuration: 3000,
+        show: true,
+        size: 80,
         spinnerColor: '#ff1d5e'
       }
     }

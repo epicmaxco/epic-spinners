@@ -23,8 +23,8 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: config.lib.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.lib.assetsRoot,
-    filename: utils.assetsLibPath('[name].min.js'),
-    library: '[name]',
+    filename: utils.assetsLibPath('epic-spinners.min.js'),
+    library: 'epic-spinners',
     libraryTarget: 'umd'
   },
   plugins: [
@@ -40,10 +40,10 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: utils.assetsLibPath('[name].min.css')
+      filename: utils.assetsLibPath('epic-spinners.min.css')
     }),
-    // Compress extracted CSS. We are using this plugin so that possible
-    // duplicated CSS from different components can be deduped.
+    // Compress extracted CSS. We are using this plugin so that's possible
+    // for duplicated CSS from different components to be deduped.
     new OptimizeCSSPlugin({
       cssProcessorOptions: {
         safe: true

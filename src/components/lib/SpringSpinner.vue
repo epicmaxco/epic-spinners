@@ -32,8 +32,7 @@
 
     data () {
       return {
-        animationBaseName: 'spring-spinner-animation',
-        currentAnimationName: ''
+        animationName: `spring-spinner-animation-${Date.now()}`
       }
     },
 
@@ -60,17 +59,19 @@
           borderTopColor: this.color,
           borderWidth: `${this.size / 7}px`,
           animationDuration: `${this.animationDuration}ms`,
-          animationName: this.currentAnimationName
+          animationName: this.animationName
         }
       }
     },
 
     watch: {
-      '$props': {
-        handler () {
-          this.updateAnimation()
-        },
-        deep: true
+      size: {
+        handler: 'updateAnimation',
+        immediate: true
+      },
+      color: {
+        handler: 'updateAnimation',
+        immediate: true
       }
     },
 
@@ -78,14 +79,14 @@
       this.updateAnimation()
     },
 
+    beforeDestroy () {
+      utils.removeKeyframes(this.animationName)
+    },
+
     methods: {
       updateAnimation () {
-        this.updateAnimationName()
-        utils.appendKeyframes(this.currentAnimationName, this.generateKeyframes())
-      },
-
-      updateAnimationName () {
-        this.currentAnimationName = `${this.animationBaseName}-${Date.now()}`
+        utils.removeKeyframes(this.animationName)
+        utils.appendKeyframes(this.animationName, this.generateKeyframes())
       },
 
       generateKeyframes () {
@@ -143,6 +144,7 @@
     transform: rotate(-200deg);
   }
 
+  /* NOTE Keyframes here serve as reference. They don't do anything. */
   @keyframes spring-spinner-animation {
     0% {
       border-width: calc(60px / 7);

@@ -43,6 +43,9 @@ Vue.js usage example
   // import 'epic-spinners/dist/lib/epic-spinners.min.css'
   // import {AtomSpinner} from 'epic-spinners/dist/lib/epic-spinners.min.js'
   
+  // To get tree shaking from webpack (won't import all spinners when you only need one)
+  // import AtomSpinner from 'epic-spinners/src/components/lib/AtomSpinner'
+  
   import {AtomSpinner} from 'epic-spinners'
   export default {
     components: {

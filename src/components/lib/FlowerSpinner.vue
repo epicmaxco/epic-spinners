@@ -1,8 +1,8 @@
 <template>
   <div class="flower-spinner" :style="spinnerStyle">
     <div class="dots-container" :style="dotsContainerStyle">
-      <div class="bigger-dot" :style="biggerDotStyle">
-        <div class="smaller-dot" :style="smallerDotStyle"></div>
+      <div class="big-dot" :style="biggerDotStyle">
+        <div class="small-dot" :style="smallerDotStyle"></div>
       </div>
     </div>
   </div>
@@ -31,10 +31,8 @@
 
     data () {
       return {
-        smallerDotAnimationBaseName: 'flower-spinner-smaller-dot-animation',
-        biggerDotAnimationBaseName: 'flower-spinner-bigger-dot-animation',
-        currentSmallerDotAnimationBaseName: '',
-        currentBiggerDotAnimationBaseName: ''
+        smallDotName: `flower-spinner-small-dot-${Date.now()}`,
+        bigDotName: `flower-spinner-big-dot-${Date.now()}`
       }
     },
 
@@ -61,7 +59,7 @@
         return {
           background: this.color,
           animationDuration: `${this.animationDuration}ms`,
-          animationName: this.currentSmallerDotAnimationBaseName
+          animationName: this.smallDotName
         }
       },
 
@@ -69,37 +67,36 @@
         return {
           background: this.color,
           animationDuration: `${this.animationDuration}ms`,
-          animationName: this.currentBiggerDotAnimationBaseName
+          animationName: this.bigDotName
         }
       }
     },
 
     watch: {
-      '$props': {
-        handler () {
-          this.updateAnimation()
-        },
-        deep: true
+      size: {
+        handler: 'updateAnimation',
+        immediate: true
+      },
+      color: {
+        handler: 'updateAnimation',
+        immediate: true
       }
     },
 
-    mounted () {
-      this.updateAnimation()
+    beforeDestroy () {
+      utils.removeKeyframes(this.smallDotName)
+      utils.removeKeyframes(this.bigDotName)
     },
 
     methods: {
       updateAnimation () {
-        this.updateAnimationName()
-        utils.appendKeyframes(this.currentSmallerDotAnimationBaseName, this.generateSmallerDotKeyframes())
-        utils.appendKeyframes(this.currentBiggerDotAnimationBaseName, this.generateBiggerDotKeyframes())
+        utils.removeKeyframes(this.smallDotName)
+        utils.appendKeyframes(this.smallDotName, this.generateSmallDotKeyframes())
+        utils.removeKeyframes(this.bigDotName)
+        utils.appendKeyframes(this.bigDotName, this.generateBigDotKeyframes())
       },
 
-      updateAnimationName () {
-        this.currentSmallerDotAnimationBaseName = `${this.smallerDotAnimationBaseName}-${Date.now()}`
-        this.currentBiggerDotAnimationBaseName = `${this.biggerDotAnimationBaseName}-${Date.now()}`
-      },
-
-      generateSmallerDotKeyframes () {
+      generateSmallDotKeyframes () {
         return `0%, 100% {
                     box-shadow: 0 0 0 ${this.color},
                                 0 0 0 ${this.color},
@@ -133,7 +130,7 @@
                   }`
       },
 
-      generateBiggerDotKeyframes () {
+      generateBigDotKeyframes () {
         return `0%, 100% {
                     box-shadow: 0 0 0 ${this.color},
                                 0 0 0 ${this.color},
@@ -193,25 +190,25 @@
     width: calc(70px / 7);
   }
 
-  .flower-spinner .smaller-dot {
+  .flower-spinner .small-dot {
     background: #ff1d5e;
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    animation: flower-spinner-smaller-dot-animation 2.5s 0s infinite both;
-
+    animation: flower-spinner-small-dot-animation 2.5s 0s infinite both;
   }
 
-  .flower-spinner .bigger-dot {
+  .flower-spinner .big-dot {
     background: #ff1d5e;
     height: 100%;
     width: 100%;
     padding: 10%;
     border-radius: 50%;
-    animation: flower-spinner-bigger-dot-animation 2.5s 0s infinite both;
+    animation: flower-spinner-big-dot-animation 2.5s 0s infinite both;
   }
 
-  @keyframes flower-spinner-bigger-dot-animation {
+  /* NOTE Keyframes here serve as reference. They don't do anything. */
+  @keyframes flower-spinner-big-dot-animation {
     0%, 100% {
       box-shadow: rgb(255, 29, 94) 0px 0px 0px,
       rgb(255, 29, 94) 0px 0px 0px,
@@ -251,7 +248,7 @@
     }
   }
 
-  @keyframes flower-spinner-smaller-dot-animation {
+  @keyframes flower-spinner-small-dot-animation {
     0%, 100% {
       box-shadow: rgb(255, 29, 94) 0px 0px 0px,
       rgb(255, 29, 94) 0px 0px 0px,

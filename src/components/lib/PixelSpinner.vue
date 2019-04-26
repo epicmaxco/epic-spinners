@@ -27,8 +27,7 @@
 
     data () {
       return {
-        animationBaseName: 'pixel-spinner-animation',
-        currentAnimationName: ''
+        animationName: `pixel-spinner-animation-${Date.now()}`
       }
     },
 
@@ -47,7 +46,7 @@
       spinnerInnerStyle () {
         return {
           animationDuration: `${this.animationDuration}ms`,
-          animationName: this.currentAnimationName,
+          animationName: this.animationName,
           width: `${this.pixelSize}px`,
           height: `${this.pixelSize}px`,
           backgroundColor: this.color,
@@ -67,11 +66,9 @@
     },
 
     watch: {
-      '$props': {
-        handler () {
-          this.updateAnimation()
-        },
-        deep: true
+      size: {
+        handler: 'updateAnimation',
+        immediate: true
       }
     },
 
@@ -79,14 +76,14 @@
       this.updateAnimation()
     },
 
+    beforeDestroy () {
+      utils.removeKeyframes(this.animationName)
+    },
+
     methods: {
       updateAnimation () {
-        this.updateAnimationName()
-        utils.appendKeyframes(this.currentAnimationName, this.generateKeyframes())
-      },
-
-      updateAnimationName () {
-        this.currentAnimationName = `${this.animationBaseName}-${Date.now()}`
+        utils.removeKeyframes(this.animationName)
+        utils.appendKeyframes(this.animationName, this.generateKeyframes())
       },
 
       generateKeyframes () {
@@ -152,6 +149,7 @@
     animation: pixel-spinner-animation 2000ms linear infinite;
   }
 
+  /* NOTE Keyframes here serve as reference. They don't do anything. */
   @keyframes pixel-spinner-animation {
     50% {
       box-shadow: 20px 20px 0px 0px,
