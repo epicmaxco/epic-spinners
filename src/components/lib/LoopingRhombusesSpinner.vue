@@ -2,7 +2,7 @@
   <div class="looping-rhombuses-spinner" :style="spinnerStyle">
     <div class="rhombus"
          v-for="(rs, index) in rhombusesStyles"
-         :ikey="index"
+         :key="index"
          :style="rs">
     </div>
   </div>
