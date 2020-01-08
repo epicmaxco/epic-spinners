@@ -185,6 +185,7 @@ You can easily configure spinners' size, color and animation speed
 ## Epic spinners for other frameworks
 - [angular-epic-spinners](https://github.com/hackafro/angular-epic-spinners) by @HackAfro
 - [react-epic-spinners](https://github.com/bondz/react-epic-spinners) by @bondz
+- [react-native-epic-spinners](https://github.com/MuhmdRaouf/react-native-epic-spinners) by @MuhmdRaouf
 - [wc-epic-spinners](https://github.com/craigjennings11/wc-epic-spinners) by @craigjennings11
 
 ## Contributing
@@ -204,6 +205,3 @@ Yes!  Visit [our homepage](https://epicmax.co/) or simply send us a message to [
 
 ## License
 [MIT](https://github.com/epicmaxco/vuestic-admin/blob/master/LICENSE) license.
-
-
-
