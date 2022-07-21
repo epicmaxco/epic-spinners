@@ -39,5 +39,5 @@ export {
   SpringSpinner,
   LoopingRhombusesSpinner,
   HalfCircleSpinner,
-  AtomSpinner
+  AtomSpinner,
 }

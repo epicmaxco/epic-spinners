@@ -1,85 +1,125 @@
 {
   "name": "epic-spinners",
-  "version": "1.1.0",
-  "description": "Easy to use css spinners collection with vue.js integration",
-  "author": "epicmax <hello@epicmax.co>",
-  "main": "src/lib.js",
-  "types": "src/lib.d.ts",
-  "private": false,
+  "version": "2.0.0",
   "license": "MIT",
+  "private": false,
+  "description": "Easy to use css spinners collection with vue.js integration.",
+  "author": "epicmax <hello@epicmax.co>",
+  "homepage": "https://epic-spinners.epicmax.co",
   "url": "https://github.com/epicmaxco/epic-spinners",
   "repository": {
     "type": "git",
     "url": "https://github.com/epicmaxco/epic-spinners.git"
   },
+  "bugs": {
+    "url": "https://github.com/epicmaxco/epic-spinners/issues"
+  },
+  "keywords": [
+    "spinner",
+    "vuejs",
+    "vue",
+    "vue3"
+  ],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/lib.cjs.js",
+  "module": "./dist/lib.es.js",
+  "jsdelivr": "dist/lib.iife.js",
+  "unpkg": "dist/lib.iife.js",
+  "types": "./dist/lib.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lib.es.js",
+      "require": "./dist/lib.cjs.js",
+      "default": "./dist/lib.cjs.js"
+    },
+    "./css": "./dist/style.css",
+    "./types": "./dist/lib.d.ts",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "prepublishOnly": "npm run build",
-    "dev": "npm-run-all --parallel dev:lib dev:docs",
-    "dev:lib": "webpack --config build/webpack.lib.conf.js --watch --progress --hide-modules",
-    "dev:docs": "node build/dev-server.js",
-    "build": "npm run build:lib && npm run build:docs",
-    "build:lib": "node build/build-lib.js",
-    "build:docs": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "prepare": "husky install",
+    "dev": "vite",
+    "build:types": "copyfiles -u 1 ./src/lib.d.ts ./dist",
+    "build": "vue-tsc --noEmit && vite build && npm run build:types",
+    "preview": "vite preview",
+    "types:check": "vue-tsc --noEmit",
+    "lint:check": "eslint . --ext .ts,.cjs,.js,.vue,.json",
+    "lint": "npm run lint:check -- --fix",
+    "lint:style:check": "stylelint ./src/**/*.{vue,css,scss,html,md}",
+    "lint:style": "npm run lint:style:check --- --fix",
+    "format:check": "stylelint-config-prettier-check && stylelint-config-prettier-scss-check && prettier . --check",
+    "format": "prettier . --write --ignore-unknown",
+    "code:check": "npm run format:check && npm run lint:style:check && npm run lint:check && npm run types:check",
+    "code:fix": "npm run format && npm run lint:style && npm run lint"
+  },
+  "lint-staged": {
+    "*.{cjs,js,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.vue": [
+      "prettier --write",
+      "stylelint --fix",
+      "eslint --fix"
+    ],
+    "*.{css,scss,html,md}": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.json": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "peerDependencies": {
-    "vue": "^2.5.2"
+    "vue": "^3.2.38"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-preset-env": "^1.3.2",
-    "babel-preset-stage-2": "^6.22.0",
-    "babel-register": "^6.22.0",
-    "chalk": "^2.0.1",
-    "connect-history-api-fallback": "^1.3.0",
-    "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.28.0",
-    "cssnano": "^3.10.0",
-    "eslint": "^3.19.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-html": "^3.0.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
-    "eventsource-polyfill": "^0.9.6",
-    "express": "^4.14.1",
-    "extract-text-webpack-plugin": "^2.0.0",
-    "file-loader": "^0.11.1",
-    "friendly-errors-webpack-plugin": "^1.1.3",
-    "html-webpack-plugin": "^2.28.0",
-    "http-proxy-middleware": "^0.17.3",
-    "npm-run-all": "^4.0.2",
-    "webpack-bundle-analyzer": "^2.2.1",
-    "semver": "^5.3.0",
-    "shelljs": "^0.7.6",
-    "opn": "^5.1.0",
-    "optimize-css-assets-webpack-plugin": "^2.0.0",
-    "ora": "^1.2.0",
-    "rimraf": "^2.6.0",
-    "sass-loader": "^6.0.5",
-    "node-sass": "^4.5.2",
-    "url-loader": "^0.5.8",
-    "vue": "^2.5.2",
-    "vue-loader": "^12.1.0",
-    "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.2  ",
-    "webpack": "^2.6.1",
-    "webpack-dev-middleware": "^1.10.0",
-    "webpack-hot-middleware": "^2.18.0",
-    "webpack-merge": "^4.1.0"
+    "@types/node": "^18.7.13",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "autoprefixer": "^10.4.8",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.22.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-vue": "^9.4.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss-html": "^1.5.0",
+    "postcss-markdown": "^1.2.0",
+    "prettier": "^2.7.1",
+    "sass": "^1.53.0",
+    "stylelint": "^14.11.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9",
+    "vue-eslint-parser": "^9.0.3",
+    "vue-tsc": "^0.35.0"
   },
   "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">=16"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "last 2 versions",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

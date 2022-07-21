@@ -1,28 +1,25 @@
 export default {
   /**
-   * Add reyframes to body as style block
+   * Add keyframes to body as style block
    * @param name string
    * @param frames string
    */
-  appendKeyframes: function (name, frames) {
+  appendKeyframes: (name: string, frames: string) => {
     const sheet = document.createElement('style')
-    if (!sheet) {
-      return
-    }
     sheet.setAttribute('id', name)
     sheet.innerHTML = `@keyframes ${name} {${frames}}`
     document.body.appendChild(sheet)
   },
+
   /**
-   * Remove reyframes from body
+   * Remove keyframes from body
    * @param name string
    */
-  removeKeyframes: function (name) {
+  removeKeyframes: (name: string) => {
     const sheet = document.getElementById(name)
     if (!sheet) {
       return
     }
-    const sheetParent = sheet.parentNode
-    sheetParent.removeChild(sheet)
-  }
+    sheet.parentNode?.removeChild(sheet)
+  },
 }

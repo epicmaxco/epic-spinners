@@ -1,2 +1,7 @@
-build/*.js
-config/*.js
+.husky
+node_modules
+dist
+temp
+
+package-lock.json
+yarn.lock
