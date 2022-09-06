@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import utils from '../../services/utils'
+import utils from '../services/utils'
 
 export default {
   name: 'FlowerSpinner',

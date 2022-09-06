@@ -5,6 +5,7 @@
 
 <script lang="ts">
 import SpinnerSamples from './components/SpinnerSamples.vue'
+import './styles/index.scss'
 
 export default {
   name: 'App',

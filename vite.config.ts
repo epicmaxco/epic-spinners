@@ -9,7 +9,7 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: resolve(__dirname, 'src/lib.ts'),
-      name: 'lib',
+      name: 'epicSpinners',
       fileName: (format) => `lib.${format}.js`,
       formats: ['es', 'cjs', 'iife'],
     },

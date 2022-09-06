@@ -2693,7 +2693,12 @@
     "spdx-correct" "^3.0.0"
     "spdx-expression-parse" "^3.0.0"
 
-"vite@^2.5.10", "vite@^2.9.9":
+"vite-plugin-chunk-split@^0.2.7":
+  "integrity" "sha512-LZa5iQ5rtY1T3+dBRlqMm+g7u5j3e6Hydvt5GFxx4dXKl6j34hvFmH/H+1v1iwf9sh/B84285buSBPC9lXx8+g=="
+  "resolved" "https://registry.npmjs.org/vite-plugin-chunk-split/-/vite-plugin-chunk-split-0.2.7.tgz"
+  "version" "0.2.7"
+
+"vite@^2.5.10", "vite@^2.9.9", "vite@>=2.0.0":
   "integrity" "sha512-suxC36dQo9Rq1qMB2qiRorNJtJAdxguu5TMvBHOc/F370KvqAe9t48vYp+/TbPKRNrMh/J55tOUmkuIqstZaew=="
   "resolved" "https://registry.npmjs.org/vite/-/vite-2.9.12.tgz"
   "version" "2.9.12"
