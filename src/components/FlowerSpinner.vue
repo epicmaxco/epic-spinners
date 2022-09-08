@@ -171,7 +171,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .flower-spinner,
 .flower-spinner * {
   box-sizing: border-box;

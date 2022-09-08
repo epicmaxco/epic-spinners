@@ -86,7 +86,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .self-building-square-spinner,
 .self-building-square-spinner * {
   box-sizing: border-box;

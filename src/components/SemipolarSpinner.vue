@@ -73,7 +73,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .semipolar-spinner,
 .semipolar-spinner * {
   box-sizing: border-box;

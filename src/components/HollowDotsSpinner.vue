@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .hollow-dots-spinner,
 .hollow-dots-spinner * {
   box-sizing: border-box;

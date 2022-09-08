@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .circles-to-rhombuses-spinner,
 .circles-to-rhombuses-spinner * {
   box-sizing: border-box;

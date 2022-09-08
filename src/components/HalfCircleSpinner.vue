@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .half-circle-spinner,
 .half-circle-spinner * {
   box-sizing: border-box;

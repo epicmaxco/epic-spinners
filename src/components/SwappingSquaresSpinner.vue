@@ -75,7 +75,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .swapping-squares-spinner,
 .swapping-squares-spinner * {
   box-sizing: border-box;

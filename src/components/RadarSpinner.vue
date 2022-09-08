@@ -87,7 +87,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .radar-spinner,
 .radar-spinner * {
   box-sizing: border-box;

@@ -56,7 +56,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .atom-spinner,
 .atom-spinner * {
   box-sizing: border-box;

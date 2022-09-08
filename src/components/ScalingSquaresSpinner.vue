@@ -67,7 +67,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .scaling-squares-spinner,
 .scaling-squares-spinner * {
   box-sizing: border-box;

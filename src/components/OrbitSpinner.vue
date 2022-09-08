@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .orbit-spinner,
 .orbit-spinner * {
   box-sizing: border-box;

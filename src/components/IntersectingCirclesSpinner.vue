@@ -68,7 +68,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .intersecting-circles-spinner,
 .intersecting-circles-spinner * {
   box-sizing: border-box;

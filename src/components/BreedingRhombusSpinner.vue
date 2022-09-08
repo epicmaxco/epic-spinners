@@ -88,7 +88,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .breeding-rhombus-spinner {
   height: 65px;
   width: 65px;

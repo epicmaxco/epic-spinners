@@ -118,7 +118,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .pixel-spinner,
 .pixel-spinner * {
   box-sizing: border-box;

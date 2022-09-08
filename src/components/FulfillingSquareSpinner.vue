@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .fulfilling-square-spinner,
 .fulfilling-square-spinner * {
   box-sizing: border-box;

@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .spring-spinner,
 .spring-spinner * {
   box-sizing: border-box;

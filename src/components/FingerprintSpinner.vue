@@ -73,7 +73,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .fingerprint-spinner,
 .fingerprint-spinner * {
   box-sizing: border-box;

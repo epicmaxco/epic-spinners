@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .fulfilling-bouncing-circle-spinner,
 .fulfilling-bouncing-circle-spinner * {
   box-sizing: border-box;

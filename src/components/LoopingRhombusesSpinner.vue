@@ -68,7 +68,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .looping-rhombuses-spinner,
 .looping-rhombuses-spinner * {
   box-sizing: border-box;

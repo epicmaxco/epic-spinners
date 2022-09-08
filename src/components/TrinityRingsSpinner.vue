@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css">
 .trinity-rings-spinner,
 .trinity-rings-spinner * {
   box-sizing: border-box;
