@@ -24,19 +24,22 @@
     "dist"
   ],
   "type": "module",
-  "main": "./dist/lib.cjs.js",
-  "module": "./dist/lib.es.js",
-  "jsdelivr": "dist/lib.iife.js",
-  "unpkg": "dist/lib.iife.js",
-  "types": "./dist/lib.d.ts",
+  "main": "./dist/cjs/main.js",
+  "module": "./dist/es/main.js",
+  "jsdelivr": "dist/iife/main.js",
+  "unpkg": "dist/iife/main.js",
+  "types": "./dist/main.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/lib.es.js",
-      "require": "./dist/lib.cjs.js",
-      "default": "./dist/lib.cjs.js"
+      "import": {
+        "node": "./dist/esm-node/main.js",
+        "default": "./dist/es/main.js"
+      },
+      "require": "./dist/cjs/main.js",
+      "default": "./dist/cjs/main.js"
     },
     "./css": "./dist/style.css",
-    "./types": "./dist/lib.d.ts",
+    "./types": "./dist/main.d.ts",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },
@@ -44,7 +47,7 @@
     "prepare": "husky install",
     "dev": "vite",
     "build:types": "copyfiles -u 1 ./src/lib.d.ts ./dist",
-    "build": "vue-tsc --noEmit && vite build && npm run build:types",
+    "build": "tsx build/build.ts",
     "preview": "vite preview",
     "types:check": "vue-tsc --noEmit",
     "lint:check": "eslint . --ext .ts,.cjs,.js,.vue,.json",
@@ -101,6 +104,7 @@
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^5.0.0",
     "stylelint-config-standard-vue": "^1.0.0",
+    "tsx": "^3.9.0",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
     "vite-plugin-chunk-split": "^0.2.7",

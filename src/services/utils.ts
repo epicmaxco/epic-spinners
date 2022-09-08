@@ -5,6 +5,10 @@ export default {
    * @param frames string
    */
   appendKeyframes: (name: string, frames: string) => {
+    if (!window?.document) {
+      return
+    }
+
     const sheet = document.createElement('style')
     sheet.setAttribute('id', name)
     sheet.innerHTML = `@keyframes ${name} {${frames}}`
@@ -16,6 +20,10 @@ export default {
    * @param name string
    */
   removeKeyframes: (name: string) => {
+    if (!window?.document) {
+      return
+    }
+
     const sheet = document.getElementById(name)
     if (!sheet) {
       return

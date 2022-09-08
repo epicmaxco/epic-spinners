@@ -11,11 +11,12 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
     "allowJs": true,
     "types": ["vite/client"],
     "lib": ["esnext", "dom", "dom.iterable"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": ["node_modules", "dist", "temp"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
