@@ -79,7 +79,7 @@
     ]
   },
   "peerDependencies": {
-    "vue": "^3.2.38"
+    "vue": "^3.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.13",

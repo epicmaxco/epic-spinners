@@ -2846,7 +2846,7 @@
   dependencies:
     "@volar/vue-typescript" "0.35.2"
 
-"vue@^3.2.25", "vue@^3.2.38", "vue@3.2.38":
+"vue@^3.2.0", "vue@^3.2.25", "vue@3.2.38":
   "integrity" "sha512-hHrScEFSmDAWL0cwO4B6WO7D3sALZPbfuThDsGBebthrNlDxdJZpGR3WB87VbjpPh96mep1+KzukYEhpHDFa8Q=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.38.tgz"
   "version" "3.2.38"
