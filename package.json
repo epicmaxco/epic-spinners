@@ -24,24 +24,31 @@
     "dist"
   ],
   "type": "module",
-  "main": "./dist/cjs/main.js",
-  "module": "./dist/es/main.js",
-  "jsdelivr": "dist/iife/main.js",
-  "unpkg": "dist/iife/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/es/index.js",
+  "jsdelivr": "dist/iife/index.js",
+  "unpkg": "dist/iife/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
-        "node": "./dist/esm-node/main.js",
-        "default": "./dist/es/main.js"
+        "node": "./dist/esm-node/index.mjs",
+        "default": "./dist/es/index.js"
       },
-      "require": "./dist/cjs/main.js",
-      "default": "./dist/cjs/main.js"
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/es/index.js"
     },
     "./css": "./dist/style.css",
-    "./types": "./dist/main.d.ts",
-    "./dist/*": "./dist/*",
-    "./package.json": "./package.json"
+    "./types": "./dist/index.d.ts",
+    "./package.json": "./package.json",
+    "./*": {
+      "import": {
+        "node": "./dist/esm-node/components/*.mjs",
+        "default": "./dist/es/components/*.js"
+      },
+      "require": "./dist/cjs/components/*.js",
+      "default": "./dist/es/components/*.js"
+    }
   },
   "scripts": {
     "prepare": "husky install",
