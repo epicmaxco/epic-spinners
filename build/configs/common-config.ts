@@ -9,10 +9,8 @@ import { dependencies } from '../helpers'
 import type { BuildFormat } from '../types/types'
 
 const libBuildOptions = (format: BuildFormat): LibraryOptions => ({
-  entry: resolve(process.cwd(), `src/lib.ts`),
-  fileName: () => 'index.js',
+  entry: resolve(process.cwd(), `src/index.ts`),
   formats: [format === 'cjs' ? 'cjs' : 'es'],
-  name: 'epicSpinners',
 })
 
 const rollupBuildOptions = (format: BuildFormat): RollupOptions => {
@@ -66,7 +64,7 @@ export const createIifeViteConfig = () => {
       sourcemap: true,
       target: 'esnext',
       lib: {
-        entry: resolve(process.cwd(), `src/lib.ts`),
+        entry: resolve(process.cwd(), `src/index.ts`),
         fileName: () => 'index.js',
         formats: [format],
         name: 'epicSpinners',
