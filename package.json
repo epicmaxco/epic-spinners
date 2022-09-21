@@ -28,7 +28,7 @@
   "module": "./dist/es/index.js",
   "jsdelivr": "dist/iife/index.js",
   "unpkg": "dist/iife/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": {
@@ -39,9 +39,10 @@
       "default": "./dist/es/index.js"
     },
     "./css": "./dist/style.css",
-    "./types": "./dist/index.d.ts",
+    "./types": "./dist/types/index.d.ts",
     "./package.json": "./package.json",
     "./*": {
+      "types": "./dist/types/components/*.vue.d.ts",
       "import": {
         "node": "./dist/esm-node/components/*.mjs",
         "default": "./dist/es/components/*.js"
@@ -50,10 +51,12 @@
       "default": "./dist/es/components/*.js"
     }
   },
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
-    "build:types": "copyfiles -u 1 ./src/lib.d.ts ./dist",
     "build": "tsx build/build.ts",
     "preview": "vite preview",
     "types:check": "vue-tsc --noEmit",

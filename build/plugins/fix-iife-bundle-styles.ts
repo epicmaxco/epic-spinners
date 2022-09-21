@@ -25,7 +25,7 @@ const processFiles = (jsPath: string, stylePath: string) => {
   rmSync(stylePath)
 }
 
-export const processDir = (bundleDir: string) => {
+const processDir = (bundleDir: string) => {
   let jsPath = ''
   let stylePath = ''
 
@@ -42,11 +42,11 @@ export const processDir = (bundleDir: string) => {
   jsPath && stylePath && processFiles(jsPath, stylePath)
 }
 
-export const processIifeBundle = (): Plugin => {
+export const fixIifeBundleStyles = (): Plugin => {
   let outDir = ''
 
   return {
-    name: 'epicSpinners:process-iife-bundle',
+    name: 'epicSpinners:fix-iife-bundle-styles',
 
     configResolved: (config) => {
       outDir = config.build.outDir

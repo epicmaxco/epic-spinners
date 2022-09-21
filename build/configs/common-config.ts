@@ -2,14 +2,16 @@ import vue from '@vitejs/plugin-vue'
 import { LibraryOptions } from 'vite'
 import { resolve } from 'path'
 import type { RollupOptions } from 'rollup'
-import { processBundles } from '../plugins/process-bundles'
-import { processIifeBundle } from '../plugins/process-iife-bundle'
+import { fixIifeBundleStyles } from '../plugins/fix-iife-bundle-styles'
+import { transformCssFiles } from '../plugins/transform-css-files'
+import { removeCssImports } from '../plugins/remove-css-imports'
+import { removeEntryPointImports } from '../plugins/remove-entry-point-imports'
 import { defineVitePlugin } from '../types/define-vite-plugin'
-import { dependencies } from '../helpers'
+import { dependencies, parsePath } from '../helpers'
 import type { BuildFormat } from '../types/types'
 
 const libBuildOptions = (format: BuildFormat): LibraryOptions => ({
-  entry: resolve(process.cwd(), `src/index.ts`),
+  entry: resolve(process.cwd(), 'src/index.ts'),
   formats: [format === 'cjs' ? 'cjs' : 'es'],
 })
 
@@ -22,14 +24,18 @@ const rollupBuildOptions = (format: BuildFormat): RollupOptions => {
       dir: 'dist',
       format: format === 'cjs' ? 'cjs' : 'es',
       entryFileNames: format === 'esm-node' ? `${format}/index.mjs` : `${format}/index.js`,
-      chunkFileNames: format === 'esm-node' ? '[name].mjs' : '[name].js',
+      chunkFileNames: (chunkInfo) => {
+        const ext = chunkInfo.name.includes('style/') ? 'css' : format === 'esm-node' ? 'mjs' : 'js'
+        return `[name].${ext}`
+      },
       assetFileNames: '[name].[ext]',
       manualChunks(id) {
-        if (id.includes('src/services')) {
-          return `${format}/services`
-        }
         if (id.includes('plugin-vue:export-helper')) {
           return `${format}/plugin-vue_export-helper`
+        }
+        if (id.includes('src/services')) {
+          const { name } = parsePath(id)
+          return `${format}/services/${name}`
         }
         if (components) {
           const chunk = components.find((name) => id.includes(name))
@@ -49,8 +55,14 @@ export const createViteConfig = (format: BuildFormat) => {
       rollupOptions: rollupBuildOptions(format),
       minify: false,
       target: 'esnext',
+      emptyOutDir: false,
     },
-    plugins: [vue(), processBundles(format)],
+    plugins: [
+      vue(),
+      transformCssFiles(),
+      removeEntryPointImports(),
+      format === 'esm-node' && removeCssImports(),
+    ],
   })
 }
 
@@ -63,8 +75,9 @@ export const createIifeViteConfig = () => {
       outDir: `dist/${format}`,
       sourcemap: true,
       target: 'esnext',
+      emptyOutDir: false,
       lib: {
-        entry: resolve(process.cwd(), `src/index.ts`),
+        entry: resolve(process.cwd(), 'src/index.ts'),
         fileName: () => 'index.js',
         formats: [format],
         name: 'epicSpinners',
@@ -78,6 +91,6 @@ export const createIifeViteConfig = () => {
         },
       },
     },
-    plugins: [vue(), processIifeBundle()],
+    plugins: [vue(), fixIifeBundleStyles()],
   })
 }
