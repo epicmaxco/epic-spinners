@@ -1,25 +1,9 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "esnext",
-    "useDefineForClassFields": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
-    "allowJs": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "dist/types",
-    "types": ["vite/client"],
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "outDir": "dist/types"
   },
   "include": ["src/*.ts"]
 }

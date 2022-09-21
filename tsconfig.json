@@ -1,23 +1,4 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "useDefineForClassFields": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client"],
-    "lib": ["esnext", "dom", "dom.iterable"]
-  },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "extends": "./tsconfig.base.json",
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]
 }
