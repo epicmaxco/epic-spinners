@@ -40,16 +40,7 @@
     },
     "./css": "./dist/style.css",
     "./types": "./dist/types/index.d.ts",
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./dist/types/components/*.vue.d.ts",
-      "import": {
-        "node": "./dist/esm-node/components/*.mjs",
-        "default": "./dist/es/components/*.js"
-      },
-      "require": "./dist/cjs/components/*.js",
-      "default": "./dist/es/components/*.js"
-    }
+    "./package.json": "./package.json"
   },
   "sideEffects": [
     "*.css"

@@ -98,7 +98,6 @@ export default {
                        ${this.pixelSize * -1}px 0 0 0,
                        0 ${this.pixelSize * -1}px 0 0;
         }
-
         75% {
           box-shadow:  ${this.pixelSize * 2}px ${this.pixelSize * 2}px 0 0,
                        ${this.pixelSize * -2}px ${this.pixelSize * -2}px 0 0,
@@ -109,7 +108,6 @@ export default {
                        ${this.pixelSize * -1}px 0 0 0,
                        0 ${this.pixelSize * -1}px 0 0;
         }
-
         100% {
           transform: rotate(360deg);
         }`

@@ -97,75 +97,75 @@ export default {
     },
 
     generateSmallDotKeyframes() {
-      return `0%, 100% {
-                    box-shadow: 0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color};
-                  }
-                  25%, 75% {
-                    box-shadow: ${this.dotSize * 1.4}px 0 0 ${this.color},
-                                -${this.dotSize * 1.4}px 0 0 ${this.color},
-                                0 ${this.dotSize * 1.4}px 0 ${this.color},
-                                0 -${this.dotSize * 1.4}px 0 ${this.color},
-                                ${this.dotSize}px -${this.dotSize}px 0 ${this.color},
-                                ${this.dotSize}px ${this.dotSize}px 0 ${this.color},
-                                -${this.dotSize}px -${this.dotSize}px 0 ${this.color},
-                                -${this.dotSize}px ${this.dotSize}px 0 ${this.color};
-
-                  }
-                  100% {
-                    box-shadow: 0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color};
-                  }`
+      return `
+        0%, 100% {
+          box-shadow: 0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color};
+        }
+        25%, 75% {
+          box-shadow: ${this.dotSize * 1.4}px 0 0 ${this.color},
+                      -${this.dotSize * 1.4}px 0 0 ${this.color},
+                      0 ${this.dotSize * 1.4}px 0 ${this.color},
+                      0 -${this.dotSize * 1.4}px 0 ${this.color},
+                      ${this.dotSize}px -${this.dotSize}px 0 ${this.color},
+                      ${this.dotSize}px ${this.dotSize}px 0 ${this.color},
+                      -${this.dotSize}px -${this.dotSize}px 0 ${this.color},
+                      -${this.dotSize}px ${this.dotSize}px 0 ${this.color};
+        }
+        100% {
+          box-shadow: 0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color};
+        }`
     },
 
     generateBigDotKeyframes() {
-      return `0%, 100% {
-                    box-shadow: 0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color};
-                  }
-                  50% {
-                    transform: rotate(180deg);
-                  }
-                  25%, 75% {
-                    box-shadow: ${this.dotSize * 2.6}px 0 0 ${this.color},
-                                -${this.dotSize * 2.6}px 0 0 ${this.color},
-                                0 ${this.dotSize * 2.6}px 0 ${this.color},
-                                0 -${this.dotSize * 2.6}px 0 ${this.color},
-                                ${this.dotSize * 1.9}px -${this.dotSize * 1.9}px 0 ${this.color},
-                                ${this.dotSize * 1.9}px ${this.dotSize * 1.9}px 0 ${this.color},
-                                -${this.dotSize * 1.9}px -${this.dotSize * 1.9}px 0 ${this.color},
-                                -${this.dotSize * 1.9}px ${this.dotSize * 1.9}px 0 ${this.color};
-
-                  }
-                  100% {
-                    transform: rotate(360deg);
-                    box-shadow: 0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color},
-                                0 0 0 ${this.color};
-                  }`
+      return `
+        0%, 100% {
+          box-shadow: 0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color};
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        25%, 75% {
+          box-shadow: ${this.dotSize * 2.6}px 0 0 ${this.color},
+                      -${this.dotSize * 2.6}px 0 0 ${this.color},
+                      0 ${this.dotSize * 2.6}px 0 ${this.color},
+                      0 -${this.dotSize * 2.6}px 0 ${this.color},
+                      ${this.dotSize * 1.9}px -${this.dotSize * 1.9}px 0 ${this.color},
+                      ${this.dotSize * 1.9}px ${this.dotSize * 1.9}px 0 ${this.color},
+                      -${this.dotSize * 1.9}px -${this.dotSize * 1.9}px 0 ${this.color},
+                      -${this.dotSize * 1.9}px ${this.dotSize * 1.9}px 0 ${this.color};
+        }
+        100% {
+          transform: rotate(360deg);
+          box-shadow: 0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color},
+                      0 0 0 ${this.color};
+        }`
     },
   },
 }
