@@ -1,4 +1,4 @@
 import { defineConfig } from 'vite'
-import createViteConfig from '../common-config'
+import { createIifeViteConfig } from './common-config'
 
-export default defineConfig(() => createViteConfig('iife'))
+export default defineConfig(() => createIifeViteConfig())

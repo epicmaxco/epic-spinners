@@ -24,29 +24,39 @@
     "dist"
   ],
   "type": "module",
-  "main": "./dist/cjs/main.js",
-  "module": "./dist/es/main.js",
-  "jsdelivr": "dist/iife/main.js",
-  "unpkg": "dist/iife/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/es/index.js",
+  "jsdelivr": "dist/iife/index.js",
+  "unpkg": "dist/iife/index.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": {
-        "node": "./dist/esm-node/main.js",
-        "default": "./dist/es/main.js"
+        "node": "./dist/esm-node/index.mjs",
+        "default": "./dist/es/index.js"
       },
-      "require": "./dist/cjs/main.js",
-      "default": "./dist/cjs/main.js"
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/es/index.js"
     },
     "./css": "./dist/style.css",
-    "./types": "./dist/main.d.ts",
-    "./dist/*": "./dist/*",
-    "./package.json": "./package.json"
+    "./types": "./dist/types/index.d.ts",
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dist/types/components/*.vue.d.ts",
+      "import": {
+        "node": "./dist/esm-node/components/*.mjs",
+        "default": "./dist/es/components/*.js"
+      },
+      "require": "./dist/cjs/components/*.js",
+      "default": "./dist/es/components/*.js"
+    }
   },
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
-    "build:types": "copyfiles -u 1 ./src/lib.d.ts ./dist",
     "build": "tsx build/build.ts",
     "preview": "vite preview",
     "types:check": "vue-tsc --noEmit",
@@ -89,7 +99,6 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
     "autoprefixer": "^10.4.8",
-    "copyfiles": "^2.4.1",
     "eslint": "^8.22.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-vue": "^9.4.0",
