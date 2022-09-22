@@ -91,22 +91,22 @@ export default {
 
     generateKeyframes() {
       return `
-          0% {
-            border-width: ${this.size / 7}px;
+        0% {
+          border-width: ${this.size / 7}px;
+        }
+        25% {
+          border-width: ${this.size / 23.33}px;
+        }
+        50% {
+          transform: rotate(115deg);
+          border-width: ${this.size / 7}px;
+        }
+        75% {
+          border-width: ${this.size / 23.33}px;
           }
-          25% {
-            border-width: ${this.size / 23.33}px;
-          }
-          50% {
-            transform: rotate(115deg);
-            border-width: ${this.size / 7}px;
-          }
-          75% {
-            border-width: ${this.size / 23.33}px;
-           }
-          100% {
-           border-width: ${this.size / 7}px;
-          }`
+        100% {
+          border-width: ${this.size / 7}px;
+        }`
     },
   },
 }
