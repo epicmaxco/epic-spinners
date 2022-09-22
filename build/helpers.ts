@@ -1,36 +1,26 @@
-import { extname, dirname, basename, resolve } from 'path'
+import { resolve, parse, join } from 'path'
 import { existsSync, readdirSync, lstatSync, readFileSync } from 'fs'
-
-export const parsePath = (path: string) => {
-  const ext = extname(path).replace('.', '')
-
-  return {
-    ext,
-    dir: dirname(path),
-    name: basename(path, `.${ext}`),
-  }
-}
 
 const processEntry = (componentPath: string) => {
   if (!existsSync(componentPath)) {
     return
   }
 
-  const { ext, name, dir } = parsePath(componentPath)
+  const { ext, name, dir } = parse(componentPath)
 
-  if (ext === 'vue') {
+  if (ext === '.vue') {
     return { name, dir }
   }
 }
 
-export const processEntries = (componentsDir: string) => {
+export const generateComponentsList = (componentsDir: string) => {
   let entries: Record<string, string>[] = []
 
   readdirSync(componentsDir).forEach((entryName) => {
-    const currentPath = `${componentsDir}/${entryName}`
+    const currentPath = join(componentsDir, entryName)
 
     if (lstatSync(currentPath).isDirectory()) {
-      entries = [...entries, ...processEntries(currentPath)]
+      entries = [...entries, ...generateComponentsList(currentPath)]
     }
 
     const entry = processEntry(currentPath)

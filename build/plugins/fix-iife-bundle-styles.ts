@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync, writeFileSync, rmSync } from 'fs'
+import { parse, join } from 'path'
 import { Plugin } from 'vite'
-import { parsePath } from '../helpers'
 
 const generateImportStylesString = (styleContent: string) => `
 var __vite_style__ = document.createElement('style');
@@ -30,12 +30,12 @@ const processDir = (bundleDir: string) => {
   let stylePath = ''
 
   readdirSync(bundleDir).forEach((entryName) => {
-    const { ext } = parsePath(entryName)
-    if (ext === 'js') {
-      jsPath = `${bundleDir}/${entryName}`
+    const { ext } = parse(entryName)
+    if (ext === '.js') {
+      jsPath = join(bundleDir, entryName)
     }
-    if (ext === 'css') {
-      stylePath = `${bundleDir}/${entryName}`
+    if (ext === '.css') {
+      stylePath = join(bundleDir, entryName)
     }
   })
 

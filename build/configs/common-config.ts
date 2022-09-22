@@ -1,14 +1,18 @@
 import vue from '@vitejs/plugin-vue'
 import { LibraryOptions } from 'vite'
-import { resolve } from 'path'
+import { resolve, parse, join } from 'path'
 import type { RollupOptions } from 'rollup'
 import { fixIifeBundleStyles } from '../plugins/fix-iife-bundle-styles'
 import { transformCssFiles } from '../plugins/transform-css-files'
 import { removeCssImports } from '../plugins/remove-css-imports'
 import { removeEntryPointImports } from '../plugins/remove-entry-point-imports'
 import { defineVitePlugin } from '../types/define-vite-plugin'
-import { dependencies, parsePath } from '../helpers'
+import { dependencies, generateComponentsList } from '../helpers'
 import type { BuildFormat } from '../types/types'
+
+const components = generateComponentsList(resolve(process.cwd(), 'src/components')).map(
+  ({ name }) => name,
+)
 
 const libBuildOptions = (format: BuildFormat): LibraryOptions => ({
   entry: resolve(process.cwd(), 'src/index.ts'),
@@ -16,31 +20,34 @@ const libBuildOptions = (format: BuildFormat): LibraryOptions => ({
 })
 
 const rollupBuildOptions = (format: BuildFormat): RollupOptions => {
-  const components = process.env.VUE_BUILD_COMPONENTS?.split(' ')
-
   return {
     external: dependencies,
     output: {
       dir: 'dist',
       format: format === 'cjs' ? 'cjs' : 'es',
-      entryFileNames: format === 'esm-node' ? `${format}/index.mjs` : `${format}/index.js`,
-      chunkFileNames: (chunkInfo) => {
-        const ext = chunkInfo.name.includes('style/') ? 'css' : format === 'esm-node' ? 'mjs' : 'js'
-        return `[name].${ext}`
-      },
+      entryFileNames: join(format, `index.${format === 'esm-node' ? 'mjs' : 'js'}`),
+      minifyInternalExports: false,
       assetFileNames: '[name].[ext]',
+      chunkFileNames: (chunkInfo) => {
+        if (chunkInfo.name.startsWith('style')) {
+          return '[name].css'
+        }
+        return `[name].${format === 'esm-node' ? 'mjs' : 'js'}`
+      },
       manualChunks(id) {
         if (id.includes('plugin-vue:export-helper')) {
-          return `${format}/plugin-vue_export-helper`
+          return join(format, 'plugin-vue_export-helper')
         }
-        if (id.includes('src/services')) {
-          const { name } = parsePath(id)
-          return `${format}/services/${name}`
+        if (id.includes('services')) {
+          const { name } = parse(id)
+          return join(format, 'services', name)
         }
         if (components) {
           const chunk = components.find((name) => id.includes(name))
-          const isStyle = id.includes('type=style')
-          return chunk ? (isStyle ? `style/${chunk}` : `${format}/components/${chunk}`) : undefined
+          if (chunk && id.includes('type=style')) {
+            return join('style', chunk)
+          }
+          return chunk && join(format, 'components', chunk)
         }
       },
     },
@@ -72,7 +79,7 @@ export const createIifeViteConfig = () => {
   return defineVitePlugin({
     publicDir: false,
     build: {
-      outDir: `dist/${format}`,
+      outDir: join('dist', format),
       sourcemap: true,
       target: 'esnext',
       emptyOutDir: false,

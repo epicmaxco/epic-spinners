@@ -1,14 +1,9 @@
 import { $ } from './execute'
-import { resolve } from 'path'
 import { defineLibBuild } from './types/define-lib-build'
 import { buildStart } from './steps/buildStart'
-import { processEntries } from './helpers'
 
 defineLibBuild(async () => {
   buildStart()
-
-  const entries = processEntries(resolve(process.cwd(), 'src/components'))
-  process.env['VUE_BUILD_COMPONENTS'] = entries.map(({ name }) => name).join(' ')
 
   await $('npm run types:check', { successMessage: 'types checked' })
   await Promise.all([
