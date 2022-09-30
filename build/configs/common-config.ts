@@ -1,13 +1,14 @@
 import vue from '@vitejs/plugin-vue'
 import { LibraryOptions } from 'vite'
 import { resolve, parse, join } from 'path'
-import type { RollupOptions } from 'rollup'
 import { fixIifeBundleStyles } from '../plugins/fix-iife-bundle-styles'
-import { transformCssFiles } from '../plugins/transform-css-files'
-import { removeCssImports } from '../plugins/remove-css-imports'
 import { removeEntryPointImports } from '../plugins/remove-entry-point-imports'
+import { moveCssFiles } from '../plugins/move-css-files'
+import { addCssImport } from '../plugins/add-css-import'
 import { defineVitePlugin } from '../types/define-vite-plugin'
 import { dependencies, generateComponentsList } from '../helpers'
+
+import type { RollupOptions } from 'rollup'
 import type { BuildFormat } from '../types/types'
 
 const components = generateComponentsList(resolve(process.cwd(), 'src/components')).map(
@@ -28,12 +29,7 @@ const rollupBuildOptions = (format: BuildFormat): RollupOptions => {
       entryFileNames: join(format, `index.${format === 'esm-node' ? 'mjs' : 'js'}`),
       minifyInternalExports: false,
       assetFileNames: '[name].[ext]',
-      chunkFileNames: (chunkInfo) => {
-        if (chunkInfo.name.startsWith('style')) {
-          return '[name].css'
-        }
-        return `[name].${format === 'esm-node' ? 'mjs' : 'js'}`
-      },
+      chunkFileNames: () => `[name].${format === 'esm-node' ? 'mjs' : 'js'}`,
       manualChunks(id) {
         if (id.includes('plugin-vue:export-helper')) {
           return join(format, 'plugin-vue_export-helper')
@@ -44,9 +40,6 @@ const rollupBuildOptions = (format: BuildFormat): RollupOptions => {
         }
         if (components) {
           const chunk = components.find((name) => id.includes(name))
-          if (chunk && id.includes('type=style')) {
-            return join('style', chunk)
-          }
           return chunk && join(format, 'components', chunk)
         }
       },
@@ -60,16 +53,11 @@ export const createViteConfig = (format: BuildFormat) => {
     build: {
       lib: libBuildOptions(format),
       rollupOptions: rollupBuildOptions(format),
-      minify: false,
       target: 'esnext',
       emptyOutDir: false,
+      cssCodeSplit: true,
     },
-    plugins: [
-      vue(),
-      transformCssFiles(),
-      removeEntryPointImports(),
-      format === 'esm-node' && removeCssImports(),
-    ],
+    plugins: [vue(), moveCssFiles(), addCssImport(format), removeEntryPointImports()],
   })
 }
 

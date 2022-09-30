@@ -53,17 +53,13 @@ export default {
     dotsStyles() {
       const dotsStyles = []
       const delayModifier = 0.3
-      const basicDelay = 1000
+      const basicDelay = this.animationDuration
 
       for (let i = 1; i <= this.dotsNum; i++) {
-        const style = Object.assign(
-          {
-            animationDelay: `${basicDelay * i * delayModifier}ms`,
-          },
-          this.dotStyle,
-        )
-
-        dotsStyles.push(style)
+        dotsStyles.push({
+          animationDelay: `${basicDelay * i * delayModifier}ms`,
+          ...this.dotStyle,
+        })
       }
 
       return dotsStyles
