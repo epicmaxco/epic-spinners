@@ -53,7 +53,6 @@ export const createViteConfig = (format: BuildFormat) => {
     build: {
       lib: libBuildOptions(format),
       rollupOptions: rollupBuildOptions(format),
-      minify: false,
       target: 'esnext',
       emptyOutDir: false,
       cssCodeSplit: true,
