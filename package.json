@@ -103,6 +103,7 @@
     "eslint-plugin-vue": "^9.4.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "postcss": "^8.1.0",
     "postcss-html": "^1.5.0",
     "postcss-markdown": "^1.2.0",
     "prettier": "^2.7.1",
