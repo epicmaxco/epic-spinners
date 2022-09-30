@@ -1,7 +1,6 @@
 import { $ } from './execute'
 import { defineLibBuild } from './types/define-lib-build'
 import { buildStart } from './steps/buildStart'
-import { buildEnd } from './steps/buildEnd'
 
 defineLibBuild(async () => {
   buildStart()
@@ -14,6 +13,4 @@ defineLibBuild(async () => {
     $(`vite build --config ./build/configs/vite.mjs.ts`, { successMessage: 'esm-node built' }),
     $('vue-tsc --project tsconfig.production.json', { successMessage: 'types built' }),
   ])
-
-  buildEnd()
 })
