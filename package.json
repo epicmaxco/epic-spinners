@@ -1,6 +1,6 @@
 {
   "name": "epic-spinners",
-  "version": "2.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "private": false,
   "description": "Easy to use css spinners collection with vue.js integration.",
@@ -66,7 +66,8 @@
     "format:check": "stylelint-config-prettier-check && stylelint-config-prettier-scss-check && prettier . --check",
     "format": "prettier . --write --ignore-unknown",
     "code:check": "npm run format:check && npm run lint:style:check && npm run lint:check && npm run types:check",
-    "code:fix": "npm run format && npm run lint:style && npm run lint"
+    "code:fix": "npm run format && npm run lint:style && npm run lint",
+    "release": "tsx release-script/release-script.ts"
   },
   "lint-staged": {
     "*.{cjs,js,ts}": [
@@ -102,6 +103,7 @@
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-vue": "^9.4.0",
     "husky": "^8.0.1",
+    "inquirer": "^9.1.2",
     "lint-staged": "^13.0.3",
     "postcss": "^8.1.0",
     "postcss-html": "^1.5.0",
@@ -120,9 +122,6 @@
     "vue": "^3.2.0",
     "vue-eslint-parser": "^9.0.3",
     "vue-tsc": "^0.35.0"
-  },
-  "engines": {
-    "node": ">=16"
   },
   "browserslist": {
     "production": [
