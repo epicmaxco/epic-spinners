@@ -11,18 +11,12 @@ export const addCssImport = (format: BuildFormat): Plugin => {
 
     renderChunk(code, chunk) {
       if (chunk.fileName.includes('components/')) {
-        if (format === 'esm-node') {
-          return null
-        }
-
         const { name } = parse(chunk.fileName)
         const cssImportString = generateCssImportSting(format, name)
 
-        if (format === 'cjs') {
-          return code.replace(`'use strict';`, `'use strict';\n${cssImportString}`)
-        }
-
-        return `${cssImportString}\n${code}`
+        return format === 'cjs'
+          ? code.replace(`'use strict';`, `'use strict';\n${cssImportString}`)
+          : `${cssImportString}\n${code}`
       }
     },
   }
