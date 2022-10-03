@@ -39,6 +39,7 @@
       "default": "./dist/es/index.js"
     },
     "./types": "./dist/types/index.d.ts",
+    "./css": "./dist/style.css",
     "./package.json": "./package.json",
     "./dist/*": "./dist/*",
     "./*": {
