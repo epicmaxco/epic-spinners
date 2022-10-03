@@ -5,6 +5,7 @@ import { fixIifeBundleStyles } from '../plugins/fix-iife-bundle-styles'
 import { removeEntryPointImports } from '../plugins/remove-entry-point-imports'
 import { moveCssFiles } from '../plugins/move-css-files'
 import { addCssImport } from '../plugins/add-css-import'
+import { addEntryPointCssImport } from '../plugins/add-entry-point-css-import'
 import { defineVitePlugin } from '../types/define-vite-plugin'
 import { dependencies, generateComponentsList } from '../helpers'
 
@@ -21,15 +22,17 @@ const libBuildOptions = (format: BuildFormat): LibraryOptions => ({
 })
 
 const rollupBuildOptions = (format: BuildFormat): RollupOptions => {
+  const isEsmNode = format === 'esm-node'
+
   return {
     external: dependencies,
     output: {
       dir: 'dist',
       format: format === 'cjs' ? 'cjs' : 'es',
-      entryFileNames: join(format, `index.${format === 'esm-node' ? 'mjs' : 'js'}`),
+      entryFileNames: join(format, `index.${isEsmNode ? 'mjs' : 'js'}`),
       minifyInternalExports: false,
       assetFileNames: '[name].[ext]',
-      chunkFileNames: () => `[name].${format === 'esm-node' ? 'mjs' : 'js'}`,
+      chunkFileNames: () => `[name].${isEsmNode ? 'mjs' : 'js'}`,
       manualChunks(id) {
         if (id.includes('plugin-vue:export-helper')) {
           return join(format, 'plugin-vue_export-helper')
@@ -48,6 +51,9 @@ const rollupBuildOptions = (format: BuildFormat): RollupOptions => {
 }
 
 export const createViteConfig = (format: BuildFormat) => {
+  const isEs = format === 'es'
+  const isCjs = format === 'cjs'
+
   return defineVitePlugin({
     publicDir: false,
     build: {
@@ -55,9 +61,16 @@ export const createViteConfig = (format: BuildFormat) => {
       rollupOptions: rollupBuildOptions(format),
       target: 'esnext',
       emptyOutDir: false,
-      cssCodeSplit: true,
+      cssCodeSplit: isEs,
+      sourcemap: isCjs,
     },
-    plugins: [vue(), moveCssFiles(), addCssImport(format), removeEntryPointImports()],
+    plugins: [
+      vue(),
+      isEs && moveCssFiles(format),
+      isEs && addCssImport(format),
+      removeEntryPointImports(),
+      isCjs && addEntryPointCssImport(format),
+    ],
   })
 }
 
