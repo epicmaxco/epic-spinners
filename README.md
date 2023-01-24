@@ -56,7 +56,7 @@ To use pure html/css version, visit our [gallery](http://epic-spinners.epicmax.c
 
 You can easily configure spinners size, color and animation speed
 
-```ts
+```html
 <flower-spinner :animation-duration="2500" :size="70" color="#ff1d5e" />
 
 <pixel-spinner :animation-duration="2000" :pixel-size="70" color="#ff1d5e" />
@@ -77,7 +77,12 @@ You can easily configure spinners size, color and animation speed
 
 <fulfilling-square-spinner :animation-duration="4000" :size="50" color="#ff1d5e" />
 
-<circles-to-rhombuses-spinner :animation-duration="1200" :circles-num="3" :circle-size="15" color="#ff1d5e" />
+<circles-to-rhombuses-spinner
+  :animation-duration="1200"
+  :circles-num="3"
+  :circle-size="15"
+  color="#ff1d5e"
+/>
 
 <semipolar-spinner :animation-duration="2000" :size="65" color="#ff1d5e" />
 
@@ -111,17 +116,65 @@ Thanks for all your wonderful PRs, issues and ideas!
 
 [![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/0)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/0)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/1)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/1)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/2)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/2)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/3)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/3)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/4)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/4)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/5)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/5)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/6)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/6)[![](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/images/7)](https://sourcerer.io/fame/smartapant/epicmaxco/epic-spinners/links/7)
 
+## Partners & Sponsors ❤️
+
+<div>
+  <a href="https://vuejs.org/partners/epicmax.html" target="_blank" title="VueJS - The Progressive JavaScript Framework">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/vuejs-light.svg" />
+      <img src="./.github/assets/vuejs.svg" loading="lazy" alt=""/>
+    </picture>
+  </a>
+  <a href="https://nuxt.com/support/agencies/epicmax" target="_blank" title="Nuxt - The Intuitive Web Framework">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/nuxt-light.svg" />
+      <img hspace="15" src="./.github/assets/nuxt.svg" loading="lazy" alt=""/>
+    </picture>
+  </a>
+  <a href="https://epicmax.co/" target="_blank" title="Epicmax - Top Vue.js Development Company"><img src="./.github/assets/epicmax.svg" loading="lazy" alt=""></a>
+  <br />
+  <br />
+  <a href="https://www.ag-grid.com/" target="_blank" title=" Data Grid: AG Grid: High-Performance React Grid, Angular Grid, JavaScript Grid">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/aggrid-light.svg" />
+      <img src="./.github/assets/aggrid.svg" loading="lazy" alt=""/>
+    </picture>
+  </a>
+  <a href="https://vuejobs.com/" target="_blank" title="Vue.js jobs – Browse through dozens of Vue.js openings">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/vuejobs-light.svg" />
+      <img hspace="15" src="./.github/assets/vuejobs.svg" loading="lazy" alt=""/>
+    </picture>
+  </a>
+  <a href="https://flatlogic.com/" target="_blank" title="Flatlogic - The best way to create React, Angular and Vue full-stack web applications">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./.github/assets/flatlogic-light.svg" />
+      <img src="./.github/assets/flatlogic.svg" loading="lazy" alt=""/>
+    </picture>
+  </a>
+</div>
+<br />
+
+Become a partner: [hello@epicmax.co](mailto:hello@epicmax.co)
+
 ## How can I support developers?
 
 - Star our GitHub repo :star:
 - Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
-- Follow us on [Twitter](https://twitter.com/epicmaxco) :feet:
-- Like our page on [Facebook](https://www.facebook.com/epicmaxco) :thumbsup:
-- Subscribe to our [newsletter](https://epicmax.co/newsletter) :postbox:
+- Follow us on [Twitter](https://twitter.com/vuestic_ui) :feet:
+- Like our page on [Linkedin](https://www.linkedin.com/company/18509340) :thumbsup:
+- Have collaboration ideas? Say hi: hello@epicmax.co :postbox:
 
 ## Can I hire you guys?
 
-Yes! Visit [our homepage](https://epicmax.co/) or simply send us a message to [hello@epicmax.co](mailto:hello@epicmax.co). We will be happy to work with you!
+[Epicmax](https://epicmax.co) is committed to Open Source from its beginning.
+[Epic Spinners](https://epic-spinners.epicmax.co/) was created and backed by Epicmax, and is supported through all the years.
+You can request a consultation or order web development services by Epicmax via this [form](https://epicmax.co/contacts) :sunglasses:
+Say hi: <a href=“mailto:hello@epicmax.co”>hello@epicmax.co</a>. We will be happy to work with you!
+
+[Other work](https://epicmax.co) we’ve done :the_horns:
+
+[Meet the Team](https://vuestic.dev/team)
 
 ## License
 
