@@ -56,7 +56,7 @@ To use pure html/css version, visit our [gallery](http://epic-spinners.epicmax.c
 
 You can easily configure spinners size, color and animation speed
 
-```ts
+```html
 <flower-spinner :animation-duration="2500" :size="70" color="#ff1d5e" />
 
 <pixel-spinner :animation-duration="2000" :pixel-size="70" color="#ff1d5e" />
@@ -77,7 +77,12 @@ You can easily configure spinners size, color and animation speed
 
 <fulfilling-square-spinner :animation-duration="4000" :size="50" color="#ff1d5e" />
 
-<circles-to-rhombuses-spinner :animation-duration="1200" :circles-num="3" :circle-size="15" color="#ff1d5e" />
+<circles-to-rhombuses-spinner
+  :animation-duration="1200"
+  :circles-num="3"
+  :circle-size="15"
+  color="#ff1d5e"
+/>
 
 <semipolar-spinner :animation-duration="2000" :size="65" color="#ff1d5e" />
 
