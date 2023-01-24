@@ -130,7 +130,9 @@ Thanks for all your wonderful PRs, issues and ideas!
 [Vuestic UI](https://vuestic.dev) was created and backed by Epicmax, and is supported through all the years.
 You can request a consultation or order web development services by Epicmax via this [form](https://epicmax.co/contacts) :sunglasses:
 Say hi: <a href=“mailto:hello@epicmax.co”>hello@epicmax.co</a>. We will be happy to work with you!
+
 [Other work](https://epicmax.co) we’ve done :the_horns:
+
 [Meet the Team](https://vuestic.dev/team)
 
 ## License
