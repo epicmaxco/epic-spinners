@@ -120,13 +120,18 @@ Thanks for all your wonderful PRs, issues and ideas!
 
 - Star our GitHub repo :star:
 - Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
-- Follow us on [Twitter](https://twitter.com/epicmaxco) :feet:
-- Like our page on [Facebook](https://www.facebook.com/epicmaxco) :thumbsup:
-- Subscribe to our [newsletter](https://epicmax.co/newsletter) :postbox:
+- Follow us on [Twitter](https://twitter.com/vuestic_ui) :feet:
+- Like our page on [Facebook](https://www.linkedin.com/company/18509340) :thumbsup:
+- Have collaboration ideas? Say hi: hello@epicmax.co :postbox:
 
 ## Can I hire you guys?
 
-Yes! Visit [our homepage](https://epicmax.co/) or simply send us a message to [hello@epicmax.co](mailto:hello@epicmax.co). We will be happy to work with you!
+[Epicmax](https://epicmax.co) is committed to Open Source from its beginning.
+[Vuestic UI](https://vuestic.dev) was created and backed by Epicmax, and is supported through all the years.
+You can request a consultation or order web development services by Epicmax via this [form](https://epicmax.co/contacts) :sunglasses:
+Say hi: <a href=“mailto:hello@epicmax.co”>hello@epicmax.co</a>. We will be happy to work with you!
+[Other work](https://epicmax.co) we’ve done :the_horns:
+[Meet the Team](https://vuestic.dev/team)
 
 ## License
 
