@@ -118,7 +118,7 @@ Thanks for all your wonderful PRs, issues and ideas!
 
 ## Partners & Sponsors ❤️
 
-<img hspace="24" src="./.github/assets/sponsors.jpg" loading="lazy" alt="Epicmax, vuejobs, ag-grid, flatlogic, browserstack and jetbrains">
+<img src="./.github/assets/sponsors.jpg" loading="lazy" alt="Epicmax, vuejobs, ag-grid, flatlogic, browserstack and jetbrains" width="400px">
 
 
 Become a partner: [hello@epicmax.co](mailto:hello@epicmax.co)
