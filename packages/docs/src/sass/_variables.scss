@@ -1,0 +1,63 @@
+$brand-main-color: #ff1d5e;
+$brand-main-color-dark: #931d3f;
+$brand-main-color-black: #100f0f;
+$link-pale: #ff508e;
+
+$text-color-main: #fff;
+$text-color-dark: #b7b5c0;
+$text-color-black: #2a2a2a;
+
+$font-size-xxl: 40px;
+$font-size-xl: 24px;
+$font-size-md: 16px;
+$font-size-sm: 14px;
+
+$footer-main-height: 233px;
+$footer-secondary-height: 100px;
+
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  justify-content: $value;
+}

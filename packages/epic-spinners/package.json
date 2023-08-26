@@ -1,0 +1,140 @@
+{
+  "name": "epic-spinners",
+  "version": "2.0.0",
+  "license": "MIT",
+  "private": false,
+  "description": "Easy to use css spinners collection with vue.js integration.",
+  "author": "epicmax <hello@epicmax.co>",
+  "homepage": "https://epic-spinners.epicmax.co",
+  "url": "https://github.com/epicmaxco/epic-spinners",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epicmaxco/epic-spinners.git"
+  },
+  "bugs": {
+    "url": "https://github.com/epicmaxco/epic-spinners/issues"
+  },
+  "keywords": [
+    "spinner",
+    "vuejs",
+    "vue",
+    "vue3"
+  ],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/es/index.js",
+  "jsdelivr": "dist/iife/index.js",
+  "unpkg": "dist/iife/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "node": "./dist/esm-node/index.mjs",
+        "default": "./dist/es/index.js"
+      },
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/es/index.js"
+    },
+    "./types": "./dist/types/index.d.ts",
+    "./css": "./dist/style.css",
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*",
+    "./*": {
+      "types": "./dist/types/components/*.vue.d.ts",
+      "import": {
+        "node": "./dist/esm-node/components/*.mjs",
+        "default": "./dist/es/components/*.js"
+      },
+      "require": "./dist/cjs/components/*.js",
+      "default": "./dist/es/components/*.js"
+    }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "vite",
+    "build": "tsx build/build.ts",
+    "types:check": "vue-tsc --noEmit",
+    "lint:check": "eslint . --ext .ts,.cjs,.js,.vue,.json",
+    "lint": "npm run lint:check -- --fix",
+    "lint:style:check": "stylelint ./src/**/*.{vue,css,scss,html,md}",
+    "lint:style": "npm run lint:style:check --- --fix",
+    "format:check": "stylelint-config-prettier-check && stylelint-config-prettier-scss-check && prettier . --check",
+    "format": "prettier . --write --ignore-unknown",
+    "code:check": "npm run format:check && npm run lint:style:check && npm run lint:check && npm run types:check",
+    "code:fix": "npm run format && npm run lint:style && npm run lint",
+    "release": "tsx release-script/release-script.ts"
+  },
+  "lint-staged": {
+    "*.{cjs,js,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.vue": [
+      "prettier --write",
+      "stylelint --fix",
+      "eslint --fix"
+    ],
+    "*.{css,scss,html,md}": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.json": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.13",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "autoprefixer": "^10.4.8",
+    "eslint": "^8.22.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-vue": "^9.4.0",
+    "husky": "^8.0.1",
+    "inquirer": "^9.1.2",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.1.0",
+    "postcss-html": "^1.5.0",
+    "postcss-markdown": "^1.2.0",
+    "prettier": "^2.7.1",
+    "sass": "^1.53.0",
+    "stylelint": "^14.11.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "tsx": "^3.9.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9",
+    "vite-plugin-chunk-split": "^0.2.7",
+    "vue": "^3.2.0",
+    "vue-eslint-parser": "^9.0.3",
+    "vue-tsc": "^0.35.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "last 2 versions",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
