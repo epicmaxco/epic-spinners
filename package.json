@@ -13,8 +13,7 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*",
-      "packages/extensions/*"
+      "packages/*"
     ]
   }
 }

@@ -213,7 +213,7 @@
     LoopingRhombusesSpinner,
     HalfCircleSpinner,
     AtomSpinner
-  } from './../../../epic-spinners'
+  } from '../../../epic-spinners'
 
   export default {
     name: 'LoadersGallery',
