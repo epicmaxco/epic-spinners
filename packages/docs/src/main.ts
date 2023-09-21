@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
 import { createGtm } from 'vue-gtm'
-import Clipboard from 'v-clipboard'
 import { router } from './router'
+
+// @ts-ignore
+import Clipboard from 'v-clipboard' // We need to update deps, this is done to prevent ts from complaining on missing declarations.
 
 import App from './App.vue'
 
