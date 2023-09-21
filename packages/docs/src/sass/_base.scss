@@ -1,0 +1,50 @@
+body {
+  font-family: 'Titillium Web';
+  background-image: linear-gradient(117deg, #3c2747, #222634 98%, #252433);
+  color: $text-color-main;
+}
+#app {
+  min-height: 100vh;
+  padding-bottom: 393px;
+  position: relative;
+}
+
+.github-button {
+  background-color: $brand-main-color-black;
+  height: 36px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: $text-color-main;
+  text-decoration: none !important;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(space-between);
+  padding: 0 15px;
+  box-shadow: 0 4px 12px 0 rgba(54, 193, 255, 0.1), 0 4px 12px 0 rgba(54, 193, 255, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 8px 15px 0 rgba(54, 193, 255, 0.2), 0 8px 15px 0 rgba(54, 193, 255, 0.2);
+    color: $text-color-main;
+  }
+  &:visited, :active {
+    color: $text-color-main;
+  }
+  i {
+    font-size: $font-size-xl;
+    margin-right: 8px;
+  }
+}
+a.main-link {
+  text-decoration: none;
+  color: $brand-main-color;
+  position: relative;
+  border-bottom: 1px solid $brand-main-color;
+  display: inline-block;
+  line-height: 0.85;
+  transition: all 0.3s;
+  height: 15px;
+  &:hover, &.router-link-exact-active {
+    color: $text-color-main;
+    border-bottom-color: $text-color-main;
+  }
+}

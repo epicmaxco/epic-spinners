@@ -1,0 +1,30 @@
+{
+  "name": "docs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "epic-spinners": "latest",
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^8.0.1",
+    "v-clipboard": "^3.0.0-next.1",
+    "vue": "^3.3.4",
+    "vue-gtm": "^3.5.0",
+    "vue-js-modal": "^2.0.1",
+    "vue-router": "^4.2.4",
+    "vue-toasted": "^1.1.28",
+    "vuetify": "^3.3.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5"
+  }
+}
