@@ -1,0 +1,4 @@
+[build]
+
+publish = "packages/docs/dist"
+command = "yarn build:spinners && yarn build:docs:ci"
