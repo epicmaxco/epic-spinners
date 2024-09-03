@@ -90,14 +90,6 @@
         this.currentIndex = index
         this.animateSliderWidth()
       },
-      callToasted (refName: any) {
-        console.log(refName)
-        //let myToast = this.$toasted.show('Copied!', {
-        //  theme: 'primary',
-        //  position: 'top-right'
-        //})
-        //myToast.goAway(1200)
-      },
       animateSliderWidth () {
         setTimeout(() => {
           this.sliderWidth = '20%'

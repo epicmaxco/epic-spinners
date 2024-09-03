@@ -12,8 +12,8 @@
   import Tabs from './Tab.vue'
   export default {
     name: 'modal',
-    props: { 
-      show: { type: Boolean, default: false }, 
+    props: {
+      show: { type: Boolean, default: false },
       spinnerName: { type: String, default: undefined },
     },
     data () {
@@ -32,8 +32,6 @@
     },
     components: { Tabs },
     mounted () {
-      console.log(this.spinnerName)
-
        const getRawVueData = async (fileName: any) => {
         const data = await fetch('/static/examples/vue/' + fileName + '.vue?raw&inline')
         const rawText = await data.text()
