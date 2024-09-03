@@ -10,6 +10,7 @@
     "build:spinners": "yarn workspace epic-spinners build",
     "serve:docs": "yarn workspace docs dev",
     "build:docs": "yarn workspace docs build",
+    "preview:docs": "yarn workspace docs preview",
     "build:docs:ci": "yarn workspace docs build:ci"
   },
   "workspaces": {
