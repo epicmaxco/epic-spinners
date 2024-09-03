@@ -11,7 +11,9 @@
     "serve:docs": "yarn workspace docs dev",
     "build:docs": "yarn workspace docs build",
     "preview:docs": "yarn workspace docs preview",
-    "build:docs:ci": "yarn workspace docs build:ci"
+    "build:docs:ci": "yarn workspace docs build:ci",
+    "build:ci": "yarn build:spinners && yarn build:docs",
+    "serve:ci": "yarn serve packages/docs/dist"
   },
   "workspaces": {
     "packages": [
