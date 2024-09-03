@@ -16,7 +16,7 @@
     "normalize.css": "^8.0.1",
     "v-clipboard": "^3.0.0-next.1",
     "vue": "^3.3.4",
-    "vue-gtm": "^3.5.0",
+    "@gtm-support/vue-gtm": "^3.1.0",
     "vue-js-modal": "^2.0.1",
     "vue-router": "^4.2.4",
     "vue-toasted": "^1.1.28",
