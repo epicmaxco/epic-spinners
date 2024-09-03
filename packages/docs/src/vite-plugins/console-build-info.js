@@ -1,10 +1,32 @@
 import { execSync } from 'child_process';
 
+
+function getCommit () {
+  if (process.env.RAILWAY_GIT_COMMIT_SHA) { // Railway
+    return process.env.RAILWAY_GIT_COMMIT_SHA?.slice(0,7)
+  }
+  if (process.env.COMMIT_REF) { // Netlify
+    return process.env.COMMIT_REF?.slice(0,7)
+  }
+  return execSync('git rev-parse --short HEAD').toString().trim()
+}
+
+function getBranch () {
+  if (process.env.RAILWAY_GIT_BRANCH) { // Railway
+    return process.env.RAILWAY_GIT_BRANCH
+  }
+  if (process.env.BRANCH) { // Netlify
+    return process.env.BRANCH
+  }
+  execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
+}
+
 function getLocalGitInfo() {
   try {
-    const commit = execSync('git rev-parse --short HEAD').toString().trim();
-    const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
-    return { commit, branch };
+    return {
+      commit: getBranch(),
+      branch: getBranch(),
+    };
   } catch (error) {
     console.error('Failed to get local Git information:', error);
     return { commit: 'unknown', branch: 'unknown' };
