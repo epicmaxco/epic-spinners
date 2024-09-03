@@ -19,7 +19,8 @@
     "vue": "^3.4.38",
     "vue-js-modal": "^2.0.1",
     "vue-router": "^4.4.3",
-    "vue-toasted": "^1.1.28"
+    "vue-toasted": "^1.1.28",
+    "serve": "^14.2.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.3",
