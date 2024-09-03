@@ -14,7 +14,7 @@ app.use(Clipboard)
 app.use(router)
 
 app.use(createGtm({
-  id: 'G-3CJMYTN9QS',
+  id: 'GTM-5CNVGVS3',
   enabled: true, //process.env.NODE_ENV === 'production',
   vueRouter: router
 }))
