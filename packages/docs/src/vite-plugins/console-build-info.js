@@ -1,6 +1,5 @@
 import { execSync } from 'child_process';
 
-
 function getCommit () {
   if (process.env.RAILWAY_GIT_COMMIT_SHA) { // Railway
     return process.env.RAILWAY_GIT_COMMIT_SHA?.slice(0,7)
@@ -24,7 +23,7 @@ function getBranch () {
 function getLocalGitInfo() {
   try {
     return {
-      commit: getBranch(),
+      commit: getCommit(),
       branch: getBranch(),
     };
   } catch (error) {
