@@ -47,7 +47,6 @@ export default function consoleBuildInfo() {
           attrs: { type: 'module' },
           children: `
             console.group('Build Info');
-            console.log('project:', 'Quility B2B HQ');
             console.log('date:', '${new Date().toLocaleString()}');
             console.log('commit:', '${process.env.BITBUCKET_COMMIT?.slice(0, 7) || gitInfo.commit}');
             console.log('branch:', '${process.env.BITBUCKET_BRANCH || gitInfo.branch}');
